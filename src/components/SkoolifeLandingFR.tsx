@@ -141,7 +141,7 @@ export const SkoolifeLandingFR = () => {
               
               {/* Badge flottant */}
               <div className="absolute -top-3 -right-3 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-medium shadow-skoolife animate-pulse">
-                Aperçu exclusif
+                Aperçu de l'app
               </div>
               
               {/* Glow effect */}
