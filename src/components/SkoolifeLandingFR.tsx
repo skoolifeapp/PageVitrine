@@ -11,7 +11,7 @@ export const SkoolifeLandingFR = () => {
   
   const carouselImages = [
     {
-      src: "/lovable-uploads/40a6cc04-71c3-4971-9cc3-c2ee3ebc625c.png",
+      src: "/lovable-uploads/34c522e9-b745-402b-bbcc-ff87e9d19fdd.png",
       alt: "Interface Skoolife - Tableau de bord avec tâches, planning et finances",
       title: "Tableau de bord",
       description: "Vue d'ensemble synchronisée en temps réel"
