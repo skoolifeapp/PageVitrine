@@ -1,7 +1,7 @@
-import { SkoolifeLanding } from "@/components/SkoolifeLanding";
+import { SkoolifeLandingFR } from "@/components/SkoolifeLandingFR";
 
 const Index = () => {
-  return <SkoolifeLanding />;
+  return <SkoolifeLandingFR />;
 };
 
 export default Index;
