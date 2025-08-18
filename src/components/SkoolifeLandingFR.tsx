@@ -39,7 +39,7 @@ export const SkoolifeLandingFR = () => {
                   </Button>
                 </Link>
                 <Button 
-                  onClick={() => scrollToSection('principe')}
+                  onClick={() => scrollToSection('modules')}
                   variant="outline"
                   size="lg"
                   className="font-body px-8 py-3 text-lg border-border hover:bg-accent"
@@ -59,58 +59,6 @@ export const SkoolifeLandingFR = () => {
                 />
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Principe du projet */}
-      <section id="principe" className="px-4 sm:px-6 lg:px-8 py-20 bg-muted/30">
-        <div className="container max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4">
-              Trois principes simples
-            </h2>
-            <p className="text-lg text-muted-foreground font-body max-w-2xl mx-auto">
-              Skoolife est construit autour de ce qui aide réellement les étudiants à réussir dans leur vie quotidienne.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center hover:shadow-skoolife transition-shadow duration-200">
-              <CardHeader>
-                <Target className="h-12 w-12 text-primary mx-auto mb-4" />
-                <CardTitle className="font-heading text-xl">Organiser</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="font-body">
-                  Chaque chose à sa place. Plus de tâches, rendez-vous et documents éparpillés dans plusieurs applications.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-skoolife transition-shadow duration-200">
-              <CardHeader>
-                <TrendingUp className="h-12 w-12 text-primary mx-auto mb-4" />
-                <CardTitle className="font-heading text-xl">Rester sur la bonne voie</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="font-body">
-                  Des priorités claires et des rappels doux vous aident à vous concentrer sur l'essentiel sans vous submerger.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-skoolife transition-shadow duration-200">
-              <CardHeader>
-                <Brain className="h-12 w-12 text-primary mx-auto mb-4" />
-                <CardTitle className="font-heading text-xl">Comprendre ses habitudes</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="font-body">
-                  Apprenez de vos habitudes. Voyez ce qui fonctionne, ce qui ne fonctionne pas, et développez de meilleures habitudes d'étude et de vie.
-                </CardDescription>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>

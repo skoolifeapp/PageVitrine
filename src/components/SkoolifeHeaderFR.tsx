@@ -27,12 +27,6 @@ export const SkoolifeHeaderFR = () => {
           {/* Navigation de bureau */}
           <nav className="hidden md:flex items-center space-x-8">
             <button 
-              onClick={() => scrollToSection('principe')}
-              className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-body"
-            >
-              Principe
-            </button>
-            <button 
               onClick={() => scrollToSection('modules')}
               className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-body"
             >
@@ -70,12 +64,6 @@ export const SkoolifeHeaderFR = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border animate-fade-in">
             <nav className="flex flex-col space-y-4">
-              <button 
-                onClick={() => scrollToSection('principe')}
-                className="text-left text-muted-foreground hover:text-foreground transition-colors duration-200 font-body py-2"
-              >
-                Principe
-              </button>
               <button 
                 onClick={() => scrollToSection('modules')}
                 className="text-left text-muted-foreground hover:text-foreground transition-colors duration-200 font-body py-2"
