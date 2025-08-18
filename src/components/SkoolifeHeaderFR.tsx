@@ -18,7 +18,7 @@ export const SkoolifeHeaderFR = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img 
-              src="/lovable-uploads/657ab9d7-4590-4bdb-acc9-560af6d9c887.png" 
+              src="/lovable-uploads/b8c3645b-f96c-42ec-8bd6-f3bd829eba8e.png" 
               alt="Skoolife" 
               className="h-20 w-auto"
             />

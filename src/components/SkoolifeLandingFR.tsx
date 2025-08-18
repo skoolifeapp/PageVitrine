@@ -342,7 +342,7 @@ export const SkoolifeLandingFR = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <img 
-                src="/lovable-uploads/657ab9d7-4590-4bdb-acc9-560af6d9c887.png" 
+                src="/lovable-uploads/b8c3645b-f96c-42ec-8bd6-f3bd829eba8e.png" 
                 alt="Skoolife" 
                 className="h-8 w-auto mb-2"
               />
