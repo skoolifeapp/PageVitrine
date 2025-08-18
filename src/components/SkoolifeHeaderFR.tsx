@@ -17,9 +17,11 @@ export const SkoolifeHeaderFR = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="text-xl font-bold font-heading text-foreground">
-              Skoolife
-            </div>
+            <img 
+              src="/lovable-uploads/657ab9d7-4590-4bdb-acc9-560af6d9c887.png" 
+              alt="Skoolife" 
+              className="h-8 w-auto"
+            />
           </div>
 
           {/* Navigation de bureau */}

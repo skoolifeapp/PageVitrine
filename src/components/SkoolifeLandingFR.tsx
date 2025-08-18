@@ -341,9 +341,11 @@ export const SkoolifeLandingFR = () => {
         <div className="container max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <div className="text-xl font-bold font-heading text-foreground mb-2">
-                Skoolife
-              </div>
+              <img 
+                src="/lovable-uploads/657ab9d7-4590-4bdb-acc9-560af6d9c887.png" 
+                alt="Skoolife" 
+                className="h-8 w-auto mb-2"
+              />
               <p className="text-sm text-muted-foreground font-body">
                 Gérer la vie étudiante, pas seulement les devoirs.
               </p>
