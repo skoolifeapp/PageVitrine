@@ -3,7 +3,7 @@ import { SkoolifeWaitlistFormFR } from "./SkoolifeWaitlistFormFR";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Calendar, CheckSquare, CreditCard, FileText, CheckCircle } from "lucide-react";
+import { Calendar, CheckSquare, CreditCard, FileText, CheckCircle, ArrowDown, ArrowRight, ChevronDown } from "lucide-react";
 
 export const SkoolifeLandingFR = () => {
   const scrollToSection = (sectionId: string) => {
@@ -36,6 +36,7 @@ export const SkoolifeLandingFR = () => {
                   className="bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body px-8 py-3 text-lg"
                 >
                   Rejoindre la liste d'attente
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button 
                   onClick={() => scrollToSection('modules')}
@@ -44,6 +45,7 @@ export const SkoolifeLandingFR = () => {
                   className="font-body px-8 py-3 text-lg border-border hover:bg-accent"
                 >
                   En savoir plus
+                  <ChevronDown className="ml-2 h-5 w-5" />
                 </Button>
               </div>
             </div>
@@ -62,6 +64,13 @@ export const SkoolifeLandingFR = () => {
         </div>
       </section>
 
+      {/* Flèche de transition */}
+      <div className="flex justify-center py-8">
+        <div className="animate-bounce">
+          <ArrowDown className="h-6 w-6 text-primary" />
+        </div>
+      </div>
+
       {/* Les 4 modules */}
       <section id="modules" className="px-4 sm:px-6 lg:px-8 py-20">
         <div className="container max-w-6xl mx-auto">
@@ -75,10 +84,13 @@ export const SkoolifeLandingFR = () => {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="hover:shadow-skoolife transition-shadow duration-200">
+            <Card className="hover:shadow-skoolife transition-shadow duration-200 group">
               <CardHeader>
                 <Calendar className="h-8 w-8 text-primary mb-2" />
-                <CardTitle className="font-heading text-lg">Planificateur</CardTitle>
+                <CardTitle className="font-heading text-lg flex items-center justify-between">
+                  Planificateur
+                  <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100" />
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="font-body text-sm">
@@ -87,10 +99,13 @@ export const SkoolifeLandingFR = () => {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-skoolife transition-shadow duration-200">
+            <Card className="hover:shadow-skoolife transition-shadow duration-200 group">
               <CardHeader>
                 <CheckSquare className="h-8 w-8 text-primary mb-2" />
-                <CardTitle className="font-heading text-lg">Tâches</CardTitle>
+                <CardTitle className="font-heading text-lg flex items-center justify-between">
+                  Tâches
+                  <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100" />
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="font-body text-sm">
@@ -99,10 +114,13 @@ export const SkoolifeLandingFR = () => {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-skoolife transition-shadow duration-200">
+            <Card className="hover:shadow-skoolife transition-shadow duration-200 group">
               <CardHeader>
                 <CreditCard className="h-8 w-8 text-primary mb-2" />
-                <CardTitle className="font-heading text-lg">Finances étudiantes</CardTitle>
+                <CardTitle className="font-heading text-lg flex items-center justify-between">
+                  Finances étudiantes
+                  <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100" />
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="font-body text-sm">
@@ -111,10 +129,13 @@ export const SkoolifeLandingFR = () => {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-skoolife transition-shadow duration-200">
+            <Card className="hover:shadow-skoolife transition-shadow duration-200 group">
               <CardHeader>
                 <FileText className="h-8 w-8 text-primary mb-2" />
-                <CardTitle className="font-heading text-lg">Documents</CardTitle>
+                <CardTitle className="font-heading text-lg flex items-center justify-between">
+                  Documents
+                  <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100" />
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="font-body text-sm">
@@ -125,6 +146,13 @@ export const SkoolifeLandingFR = () => {
           </div>
         </div>
       </section>
+
+      {/* Flèche de transition */}
+      <div className="flex justify-center py-8">
+        <div className="animate-bounce">
+          <ArrowDown className="h-6 w-6 text-primary" />
+        </div>
+      </div>
 
       {/* Ce que Skoolife résout */}
       <section className="px-4 sm:px-6 lg:px-8 py-20 bg-muted/30">
@@ -181,6 +209,13 @@ export const SkoolifeLandingFR = () => {
           </div>
         </div>
       </section>
+
+      {/* Flèche de transition */}
+      <div className="flex justify-center py-8">
+        <div className="animate-bounce">
+          <ArrowDown className="h-6 w-6 text-primary" />
+        </div>
+      </div>
 
       {/* Section Formulaire d'inscription */}
       <section id="inscription" className="px-4 sm:px-6 lg:px-8 py-20">
@@ -289,14 +324,17 @@ export const SkoolifeLandingFR = () => {
             </div>
             
             <div className="flex flex-wrap justify-center md:justify-end gap-6 text-sm">
-              <button className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-body">
+              <button className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-body flex items-center group">
                 Politique de confidentialité
+                <ArrowRight className="ml-1 h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
               </button>
-              <button className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-body">
+              <button className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-body flex items-center group">
                 Conditions d'utilisation
+                <ArrowRight className="ml-1 h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
               </button>
-              <button className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-body">
+              <button className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-body flex items-center group">
                 Paramètres des cookies
+                <ArrowRight className="ml-1 h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
               </button>
             </div>
           </div>
