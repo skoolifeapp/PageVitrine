@@ -1,9 +1,9 @@
 import { SkoolifeHeaderFR } from "./SkoolifeHeaderFR";
+import { SkoolifeWaitlistFormFR } from "./SkoolifeWaitlistFormFR";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Calendar, CheckSquare, CreditCard, FileText, Target, TrendingUp, Brain, Smartphone, CheckCircle } from "lucide-react";
+import { Calendar, CheckSquare, CreditCard, FileText, CheckCircle } from "lucide-react";
 
 export const SkoolifeLandingFR = () => {
   const scrollToSection = (sectionId: string) => {
@@ -30,14 +30,13 @@ export const SkoolifeLandingFR = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
-                <Link to="/waitlist">
-                  <Button 
-                    size="lg"
-                    className="bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body px-8 py-3 text-lg"
-                  >
-                    Rejoindre la liste d'attente
-                  </Button>
-                </Link>
+                <Button 
+                  onClick={() => scrollToSection('inscription')}
+                  size="lg"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body px-8 py-3 text-lg"
+                >
+                  Rejoindre la liste d'attente
+                </Button>
                 <Button 
                   onClick={() => scrollToSection('modules')}
                   variant="outline"
@@ -183,25 +182,18 @@ export const SkoolifeLandingFR = () => {
         </div>
       </section>
 
-      {/* Section CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20">
-        <div className="container max-w-4xl mx-auto text-center">
-          <div className="mb-12">
+      {/* Section Formulaire d'inscription */}
+      <section id="inscription" className="px-4 sm:px-6 lg:px-8 py-20">
+        <div className="container max-w-4xl mx-auto">
+          <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4">
               Prêt à vous organiser ?
             </h2>
             <p className="text-lg text-muted-foreground font-body max-w-2xl mx-auto mb-8">
               Rejoignez des milliers d'étudiants déjà sur la liste d'attente. Soyez le premier à découvrir une vie étudiante plus calme et organisée.
             </p>
-            <Link to="/waitlist">
-              <Button 
-                size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body px-8 py-3 text-lg"
-              >
-                Rejoindre la liste d'attente
-              </Button>
-            </Link>
           </div>
+          <SkoolifeWaitlistFormFR />
         </div>
       </section>
 
