@@ -1,5 +1,6 @@
 import { SkoolifeHeaderFR } from "./SkoolifeHeaderFR";
 import { SkoolifeWaitlistFormFR } from "./SkoolifeWaitlistFormFR";
+import { Skoolife3DHero } from "./Skoolife3DHero";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -45,16 +46,9 @@ export const SkoolifeLandingFR = () => {
               </Button>
             </div>
 
-            {/* Maquette d'application légère */}
-            <div className="max-w-2xl mx-auto">
-              <div className="bg-card border border-border rounded-xl shadow-skoolife p-8 animate-slide-up">
-                <div className="bg-primary/10 rounded-lg p-6 mb-4">
-                  <Smartphone className="h-16 w-16 text-primary mx-auto mb-4" />
-                  <p className="text-muted-foreground font-body text-sm">
-                    Maquette d'application à venir — interface claire et mobile-first conçue pour les étudiants
-                  </p>
-                </div>
-              </div>
+            {/* Animation 3D interactive */}
+            <div className="max-w-4xl mx-auto">
+              <Skoolife3DHero />
             </div>
           </div>
         </div>
