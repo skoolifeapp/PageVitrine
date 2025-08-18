@@ -28,9 +28,6 @@ const WaitlistPage = () => {
             <h1 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4">
               Rejoindre la liste d'attente Skoolife
             </h1>
-            <p className="text-lg text-muted-foreground font-body max-w-2xl mx-auto">
-              Soyez le premier à découvrir une vie étudiante plus calme et organisée. Rejoignez des milliers d'étudiants déjà sur la liste d'attente.
-            </p>
           </div>
           
           <SkoolifeWaitlistFormFR />

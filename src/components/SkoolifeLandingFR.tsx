@@ -189,9 +189,6 @@ export const SkoolifeLandingFR = () => {
             <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4">
               Prêt à vous organiser ?
             </h2>
-            <p className="text-lg text-muted-foreground font-body max-w-2xl mx-auto mb-8">
-              Rejoignez des milliers d'étudiants déjà sur la liste d'attente. Soyez le premier à découvrir une vie étudiante plus calme et organisée.
-            </p>
           </div>
           <SkoolifeWaitlistFormFR />
         </div>
