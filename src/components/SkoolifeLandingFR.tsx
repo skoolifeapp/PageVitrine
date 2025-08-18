@@ -56,7 +56,7 @@ export const SkoolifeLandingFR = () => {
                 <img 
                   src="/lovable-uploads/025c2b45-0d0e-4553-9ef5-a78112ebad64.png" 
                   alt="Interface Skoolife - Tableau de bord et section finances sur mobile"
-                  className="w-full max-w-lg mx-auto shadow-skoolife-xl hover-scale transition-all duration-300"
+                  className="w-full max-w-lg mx-auto hover-scale transition-all duration-300"
                 />
               </div>
             </div>
