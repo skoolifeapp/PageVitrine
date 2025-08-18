@@ -20,7 +20,7 @@ export const SkoolifeHeader = () => {
             <img 
               src="/lovable-uploads/b8c3645b-f96c-42ec-8bd6-f3bd829eba8e.png" 
               alt="Skoolife" 
-              className="h-20 w-auto"
+              className="h-24 w-auto"
             />
           </div>
 
