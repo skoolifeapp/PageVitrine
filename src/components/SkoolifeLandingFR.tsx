@@ -361,15 +361,6 @@ export const SkoolifeLandingFR = () => {
         </div>
       </footer>
 
-      {/* Bannière de cookies */}
-      <div className="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:max-w-sm bg-card border border-border rounded-lg shadow-skoolife p-4 animate-slide-up">
-        <p className="text-sm text-muted-foreground font-body mb-3">
-          Nous utilisons des cookies essentiels pour faire fonctionner notre site. Pas de tracking pour l'instant — nous sommes encore en développement !
-        </p>
-        <Button size="sm" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-body">
-          Compris
-        </Button>
-      </div>
     </div>
   );
 };
