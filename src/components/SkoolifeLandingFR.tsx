@@ -266,7 +266,7 @@ export const SkoolifeLandingFR = () => {
                 Quand Skoolife sera-t-il disponible ?
               </AccordionTrigger>
               <AccordionContent className="font-body text-muted-foreground">
-                Nous sommes actuellement en développement et prévoyons de lancer la version bêta début 2024. Les membres de la liste d'attente auront un accès anticipé avant la sortie publique.
+                Janvier 2026.
               </AccordionContent>
             </AccordionItem>
 
@@ -275,7 +275,7 @@ export const SkoolifeLandingFR = () => {
                 Quelles plateformes Skoolife supportera-t-il ?
               </AccordionTrigger>
               <AccordionContent className="font-body text-muted-foreground">
-                Skoolife est conçu mobile-first pour iOS et Android. Nous travaillons également sur une version web pour l'accès bureau, avec synchronisation complète sur tous vos appareils.
+                Skoolife est conçu mobile-first pour iOS et Android.
               </AccordionContent>
             </AccordionItem>
 
@@ -284,7 +284,7 @@ export const SkoolifeLandingFR = () => {
                 Combien coûtera Skoolife ?
               </AccordionTrigger>
               <AccordionContent className="font-body text-muted-foreground">
-                Nous prévoyons un modèle freemium avec les fonctionnalités essentielles gratuites pour tous les étudiants. Les fonctionnalités premium comme les analyses avancées et le stockage de documents illimité seront disponibles via un abonnement adapté aux étudiants.
+                3,99 € par mois ou 39,99 € par an.
               </AccordionContent>
             </AccordionItem>
 
@@ -293,7 +293,7 @@ export const SkoolifeLandingFR = () => {
                 Puis-je synchroniser avec mon calendrier et mes outils existants ?
               </AccordionTrigger>
               <AccordionContent className="font-body text-muted-foreground">
-                Oui ! Skoolife s'intégrera avec les applications de calendrier populaires (Google Calendar, Apple Calendar), les systèmes de gestion d'apprentissage et autres outils que vous utilisez déjà. Nous croyons en l'amélioration de votre flux de travail, pas en son remplacement complet.
+                Oui — Google Calendar et compte bancaire.
               </AccordionContent>
             </AccordionItem>
 
