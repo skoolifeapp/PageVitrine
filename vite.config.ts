@@ -33,14 +33,8 @@ export default defineConfig(({ mode }) => ({
     },
     // Générer des assets avec hash pour cache busting
     assetsDir: 'assets',
-    // Optimiser la taille
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: mode === 'production',
-        drop_debugger: mode === 'production',
-      },
-    },
+    // Optimiser la taille avec esbuild (plus rapide)
+    minify: 'esbuild',
   },
   // Optimisations pour hébergement statique
   base: './',
