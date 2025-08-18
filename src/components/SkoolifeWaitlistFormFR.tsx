@@ -6,6 +6,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 interface WaitlistData {
   email: string;
@@ -33,6 +34,7 @@ interface WaitlistData {
 
 export const SkoolifeWaitlistFormFR = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState<WaitlistData>({
     email: "",
     firstName: "",
@@ -90,34 +92,77 @@ export const SkoolifeWaitlistFormFR = () => {
       return;
     }
 
-    const submissionData = {
-      ...formData,
-      timestamp: Date.now(),
-    };
+    setIsSubmitting(true);
+    setErrors({});
 
-    // Stocker dans localStorage
-    const existing = localStorage.getItem('skoolife_waitlist');
-    const waitlist = existing ? JSON.parse(existing) : [];
-    waitlist.push(submissionData);
-    localStorage.setItem('skoolife_waitlist', JSON.stringify(waitlist));
+    try {
+      // Préparer les données pour Supabase
+      const payload = {
+        email: formData.email,
+        first_name: formData.firstName || null,
+        country: formData.country || null,
+        school: formData.school || null,
+        study_year: formData.studyYear || null,
+        needs: formData.mainNeeds.length > 0 ? formData.mainNeeds : null,
+        current_tools: null, // Pas dans le formulaire actuel
+        purchase_intent: formData.purchaseIntent ? parseInt(formData.purchaseIntent) : null,
+        beta_optin: formData.betaTester,
+        marketing_optin: formData.marketingOptIn,
+        privacy_accepted: formData.privacyConsent,
+        utm_source: formData.utmSource || null,
+        utm_medium: formData.utmMedium || null,
+        utm_campaign: formData.utmCampaign || null,
+        utm_term: formData.utmTerm || null,
+        utm_content: formData.utmContent || null,
+        referrer: formData.referrer || null,
+        device_type: formData.deviceType || null,
+        locale: formData.locale || null,
+      };
 
-    // Optionnel : POST vers le backend si l'endpoint existe
-    const signupEndpoint = (window as any).NEXT_PUBLIC_SIGNUP_ENDPOINT;
-    if (signupEndpoint) {
-      try {
-        await fetch(signupEndpoint, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(submissionData),
-        });
-      } catch (error) {
-        console.log('Échec de la soumission backend, mais données sauvegardées localement:', error);
+      // Insérer dans Supabase
+      const { data: leadData, error: leadError } = await supabase
+        .from("leads")
+        .insert([payload])
+        .select("id")
+        .single();
+
+      if (leadError) {
+        if (leadError.code === '23505') { // Contrainte d'unicité violée (email déjà existant)
+          setErrors({ email: "Cet email est déjà inscrit sur la liste d'attente." });
+        } else {
+          setErrors({ general: "Erreur lors de l'inscription. Veuillez réessayer." });
+          console.error('Erreur Supabase:', leadError);
+        }
+        return;
       }
-    }
 
-    setIsSubmitted(true);
+      // Optionnel : créer un événement
+      if (leadData?.id) {
+        await supabase.from("lead_events").insert([{
+          lead_id: leadData.id,
+          event_name: "form_submit",
+          metadata: null
+        }]);
+      }
+
+      // Fallback localStorage en cas d'échec partiel
+      const submissionData = { ...formData, timestamp: Date.now() };
+      try {
+        const existing = localStorage.getItem('skoolife_waitlist');
+        const waitlist = existing ? JSON.parse(existing) : [];
+        waitlist.push(submissionData);
+        localStorage.setItem('skoolife_waitlist', JSON.stringify(waitlist));
+      } catch (storageError) {
+        console.log('Échec du stockage localStorage:', storageError);
+      }
+
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error('Erreur lors de la soumission:', error);
+      setErrors({ general: "Erreur lors de l'inscription. Veuillez réessayer." });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleNeedsChange = (need: string, checked: boolean) => {
@@ -160,6 +205,13 @@ export const SkoolifeWaitlistFormFR = () => {
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Erreur générale */}
+          {errors.general && (
+            <div className="p-3 text-sm text-destructive bg-destructive/10 border border-destructive/20 rounded-md">
+              {errors.general}
+            </div>
+          )}
+          
           {/* Email - Requis */}
           <div className="space-y-2">
             <Label htmlFor="email" className="font-body">Email *</Label>
@@ -316,10 +368,11 @@ export const SkoolifeWaitlistFormFR = () => {
 
           <Button 
             type="submit" 
-            className="w-full bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body"
+            disabled={isSubmitting}
+            className="w-full bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body disabled:opacity-50"
             size="lg"
           >
-            Rejoindre la liste d'attente
+            {isSubmitting ? "Inscription en cours..." : "Rejoindre la liste d'attente"}
           </Button>
         </form>
 

@@ -93,6 +93,7 @@ export type Database = {
           locale: string | null
           marketing_optin: boolean | null
           needs: string[] | null
+          privacy_accepted: boolean
           purchase_intent: number | null
           referrer: string | null
           school: string | null
@@ -119,6 +120,7 @@ export type Database = {
           locale?: string | null
           marketing_optin?: boolean | null
           needs?: string[] | null
+          privacy_accepted?: boolean
           purchase_intent?: number | null
           referrer?: string | null
           school?: string | null
@@ -145,6 +147,7 @@ export type Database = {
           locale?: string | null
           marketing_optin?: boolean | null
           needs?: string[] | null
+          privacy_accepted?: boolean
           purchase_intent?: number | null
           referrer?: string | null
           school?: string | null
