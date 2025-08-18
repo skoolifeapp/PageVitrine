@@ -19,4 +19,29 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // Optimisations pour site statique
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Séparer les dépendances pour un meilleur cache
+          vendor: ['react', 'react-dom'],
+          ui: ['@radix-ui/react-accordion', '@radix-ui/react-dialog'],
+          supabase: ['@supabase/supabase-js'],
+        },
+      },
+    },
+    // Générer des assets avec hash pour cache busting
+    assetsDir: 'assets',
+    // Optimiser la taille
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: mode === 'production',
+        drop_debugger: mode === 'production',
+      },
+    },
+  },
+  // Optimisations pour hébergement statique
+  base: './',
 }));

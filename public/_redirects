@@ -1,0 +1,5 @@
+# Redirections pour SPA statique (Netlify, Vercel)
+/*    /index.html   200
+
+# Redirections spécifiques si nécessaire
+/waitlist  /index.html  200

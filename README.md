@@ -1,73 +1,145 @@
-# Welcome to your Lovable project
+# Skoolife - Site Web Statique
 
-## Project info
+Site web de présentation et liste d'attente pour Skoolife, l'application de gestion de la vie étudiante.
 
-**URL**: https://lovable.dev/projects/380933f1-1888-4904-8ee4-612ddedb3a46
+## 🏗️ Architecture
 
-## How can I edit this code?
+Ce projet est configuré comme un **site web statique** optimisé pour les performances et le SEO.
 
-There are several ways of editing your application.
+### Technologies utilisées
 
-**Use Lovable**
+- **React 18** avec TypeScript
+- **Vite** - Build tool optimisé pour sites statiques
+- **Tailwind CSS** - Design system et styling
+- **shadcn-ui** - Composants UI
+- **Supabase** - Backend pour le formulaire de liste d'attente
+- **React Router** - Routing côté client
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/380933f1-1888-4904-8ee4-612ddedb3a46) and start prompting.
+### Optimisations statiques
 
-Changes made via Lovable will be committed automatically to this repo.
+✅ **Performance**
+- Code splitting automatique
+- Lazy loading des composants
+- Cache optimisé pour les assets
+- Service Worker pour cache offline
+- Compression et minification
 
-**Use your preferred IDE**
+✅ **SEO**
+- Meta tags optimisés français/anglais
+- Schema.org JSON-LD
+- Open Graph / Twitter Cards
+- Sitemap automatique
+- URLs canoniques
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+✅ **Hébergement**
+- Configuration Netlify (`netlify.toml`)
+- Configuration Apache (`.htaccess`)
+- Redirections SPA (`_redirects`)
+- Manifest PWA
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🚀 Développement
 
-Follow these steps:
+```bash
+# Installation
+npm install
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Développement local
 npm run dev
+
+# Build statique
+npm run build
+
+# Prévisualiser le build
+npm run preview
 ```
 
-**Edit a file directly in GitHub**
+## 📁 Structure du projet
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+src/
+├── components/
+│   ├── ui/              # Composants shadcn-ui
+│   ├── SkoolifeLandingFR.tsx    # Page d'accueil française
+│   └── SkoolifeWaitlistFormFR.tsx # Formulaire liste d'attente
+├── pages/
+│   ├── Index.tsx        # Route principale
+│   ├── WaitlistPage.tsx # Page dédiée liste d'attente
+│   └── NotFound.tsx     # Page 404
+├── lib/
+│   ├── utils.ts         # Utilitaires généraux
+│   └── static-optimization.ts # Optimisations statiques
+└── integrations/
+    └── supabase/        # Configuration Supabase
+```
 
-**Use GitHub Codespaces**
+## 🌐 Déploiement
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Netlify (Recommandé)
+Le projet inclut `netlify.toml` avec configuration automatique :
+```bash
+npm run build
+# Déployer le dossier /dist
+```
 
-## What technologies are used for this project?
+### Vercel
+```bash
+npm run build
+# Déployer le dossier /dist avec redirect config
+```
 
-This project is built with:
+### Apache/Nginx
+Le fichier `.htaccess` est inclus pour Apache.
+Pour Nginx, configurer les redirections SPA manuellement.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🗃️ Base de données
 
-## How can I deploy this project?
+### Supabase - Table `waitlist`
+```sql
+- id (uuid, primary key)
+- email (text, required)
+- first_name (text)
+- country, school, study_year (text)
+- needs (array)
+- purchase_intent (integer)
+- beta_optin, marketing_optin, privacy_accepted (boolean)
+- utm_* fields (text) - tracking marketing
+- created_at, updated_at (timestamp)
+```
 
-Simply open [Lovable](https://lovable.dev/projects/380933f1-1888-4904-8ee4-612ddedb3a46) and click on Share -> Publish.
+### Sécurité RLS
+- ✅ **INSERT** : Autorisé pour utilisateurs anonymes
+- ❌ **SELECT/UPDATE/DELETE** : Interdit (protection des données)
 
-## Can I connect a custom domain to my Lovable project?
+## 🎨 Design System
 
-Yes, you can!
+Le projet utilise un design system basé sur Tailwind avec tokens sémantiques :
+- Variables CSS dans `src/index.css`
+- Configuration dans `tailwind.config.ts`
+- Composants avec variants dans `src/components/ui/`
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📊 Analytics
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Les champs UTM dans le formulaire permettent le tracking des campagnes marketing :
+- `utm_source`, `utm_medium`, `utm_campaign`
+- `utm_term`, `utm_content`
+- `referrer`, `device_type`, `locale`
+
+## 🔧 Configuration
+
+### Variables d'environnement
+```bash
+# .env.local (ne pas commiter)
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_key
+```
+
+### Build optimisations
+- Terser minification
+- Tree-shaking automatique
+- Asset hashing pour cache-busting
+- Manual chunks pour vendor libs
+
+---
+
+**Status** : Site statique prêt pour production
+**Dernière mise à jour** : 2024
