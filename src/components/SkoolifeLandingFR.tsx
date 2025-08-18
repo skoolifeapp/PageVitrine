@@ -48,15 +48,12 @@ export const SkoolifeLandingFR = () => {
 
             {/* Maquette d'application */}
             <div className="max-w-lg mx-auto">
-              <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 animate-slide-up">
+              <div className="bg-white rounded-2xl p-8 animate-slide-up">
                 <img 
                   src="/lovable-uploads/aa2ccfe6-4a1c-4e24-8450-fbbb674f6b8c.png" 
                   alt="Maquette de l'interface Skoolife - Tableau de bord principal montrant les tâches, planning et finances intégrés"
                   className="w-full max-w-xs mx-auto drop-shadow-2xl"
                 />
-                <p className="text-muted-foreground font-body text-sm text-center mt-6">
-                  Maquette d'application à venir — interface claire et mobile-first conçue pour les étudiants
-                </p>
               </div>
             </div>
           </div>
