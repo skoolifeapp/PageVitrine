@@ -20,7 +20,7 @@ export const SkoolifeLandingFR = () => {
         <div className="container max-w-7xl mx-auto">
           <div className="text-center animate-fade-in">
             {/* Contenu texte */}
-            <div>
+            <div className="mb-8 sm:mb-12 lg:mb-16">
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-3 sm:mb-4 leading-tight">
                 La vie étudiante, <span className="text-primary">simplifiée</span>
               </h1>
@@ -28,7 +28,7 @@ export const SkoolifeLandingFR = () => {
                 Planificateur, tâches, finances et documents. Tout au même endroit.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center mb-8 sm:mb-12 lg:mb-16">
                 <Button 
                   onClick={() => scrollToSection('inscription')}
                   size="lg"
@@ -47,6 +47,35 @@ export const SkoolifeLandingFR = () => {
                   <ChevronDown className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Button>
               </div>
+            </div>
+
+            {/* Carrousel d'images */}
+            <div className="relative max-w-md mx-auto">
+              <div className="relative overflow-hidden rounded-2xl shadow-skoolife-xl bg-gradient-to-br from-background to-muted/20 p-6">
+                <div className="relative aspect-[9/16] max-w-xs mx-auto">
+                  <img 
+                    src="/lovable-uploads/40a6cc04-71c3-4971-9cc3-c2ee3ebc625c.png"
+                    alt="Interface Skoolife - Tableau de bord avec tâches, planning et finances"
+                    className="w-full h-full object-contain rounded-xl hover-scale transition-all duration-500"
+                  />
+                </div>
+                
+                {/* Indicateurs de navigation */}
+                <div className="flex justify-center mt-6 space-x-2">
+                  <div className="w-2 h-2 rounded-full bg-primary shadow-sm"></div>
+                  <div className="w-2 h-2 rounded-full bg-muted-foreground/30"></div>
+                  <div className="w-2 h-2 rounded-full bg-muted-foreground/30"></div>
+                  <div className="w-2 h-2 rounded-full bg-muted-foreground/30"></div>
+                </div>
+              </div>
+              
+              {/* Badge flottant */}
+              <div className="absolute -top-3 -right-3 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-medium shadow-skoolife animate-pulse">
+                Aperçu exclusif
+              </div>
+              
+              {/* Glow effect */}
+              <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/10 via-transparent to-accent/10 blur-3xl opacity-30 rounded-full scale-110"></div>
             </div>
           </div>
         </div>
