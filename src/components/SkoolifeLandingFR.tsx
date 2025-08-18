@@ -16,24 +16,24 @@ export const SkoolifeLandingFR = () => {
       <SkoolifeHeaderFR />
 
       {/* Section Héro */}
-      <section className="px-4 sm:px-6 lg:px-8 pt-8 pb-12">
-        <div className="container max-w-5xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8 items-center animate-fade-in">
+      <section className="px-4 sm:px-6 lg:px-8 pt-16 pb-20">
+        <div className="container max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center animate-fade-in">
             {/* Contenu texte */}
             <div className="text-center lg:text-left">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground mb-4 leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading text-foreground mb-6 leading-tight">
                 Skoolife vous aide à gérer votre{" "}
                 <span className="text-primary">vie étudiante</span> — pas seulement vos devoirs.
               </h1>
-              <p className="text-lg sm:text-xl text-muted-foreground mb-6 font-body leading-relaxed">
+              <p className="text-xl sm:text-2xl text-muted-foreground mb-8 font-body leading-relaxed">
                 Planificateur, tâches, finances et documents. Tout au même endroit.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start items-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
                 <Link to="/waitlist">
                   <Button 
                     size="lg"
-                    className="bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body px-6 py-2.5 text-base"
+                    className="bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body px-8 py-3 text-lg"
                   >
                     Rejoindre la liste d'attente
                   </Button>
@@ -42,7 +42,7 @@ export const SkoolifeLandingFR = () => {
                   onClick={() => scrollToSection('principe')}
                   variant="outline"
                   size="lg"
-                  className="font-body px-6 py-2.5 text-base border-border hover:bg-accent"
+                  className="font-body px-8 py-3 text-lg border-border hover:bg-accent"
                 >
                   En savoir plus
                 </Button>
@@ -51,11 +51,11 @@ export const SkoolifeLandingFR = () => {
 
             {/* Image des mockups */}
             <div className="flex justify-center lg:justify-end">
-              <div className="relative max-w-md animate-slide-in-right">
+              <div className="relative max-w-xl animate-slide-in-right">
                 <img 
                   src="/lovable-uploads/025c2b45-0d0e-4553-9ef5-a78112ebad64.png" 
                   alt="Interface Skoolife - Tableau de bord et section finances sur mobile"
-                  className="w-full max-w-sm mx-auto drop-shadow-2xl hover-scale"
+                  className="w-full max-w-lg mx-auto drop-shadow-2xl hover-scale"
                 />
               </div>
             </div>
