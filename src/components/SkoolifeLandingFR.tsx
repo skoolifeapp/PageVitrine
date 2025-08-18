@@ -18,17 +18,17 @@ export const SkoolifeLandingFR = () => {
       {/* Section Héro */}
       <section className="px-3 sm:px-6 lg:px-8 pt-8 sm:pt-12 lg:pt-16 pb-12 sm:pb-16 lg:pb-20">
         <div className="container max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center animate-fade-in">
+          <div className="text-center animate-fade-in">
             {/* Contenu texte */}
-            <div className="text-center lg:text-left order-2 lg:order-1">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-heading text-foreground mb-4 sm:mb-6 leading-tight">
+            <div className="mb-8 sm:mb-12 lg:mb-16">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-3 sm:mb-4 leading-tight">
                 La vie étudiante, <span className="text-primary">simplifiée</span>
               </h1>
-              <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-6 sm:mb-8 font-body leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6 sm:mb-8 font-body leading-relaxed max-w-2xl mx-auto">
                 Planificateur, tâches, finances et documents. Tout au même endroit.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start items-stretch sm:items-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
                 <Button 
                   onClick={() => scrollToSection('inscription')}
                   size="lg"
@@ -49,9 +49,9 @@ export const SkoolifeLandingFR = () => {
               </div>
             </div>
 
-            {/* Image des mockups */}
-            <div className="flex justify-center lg:justify-end order-1 lg:order-2">
-              <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-xl animate-slide-in-right">
+            {/* Image des mockups - En gros */}
+            <div className="flex justify-center">
+              <div className="relative w-full max-w-4xl animate-slide-in-right">
                 <img 
                   src="/lovable-uploads/025c2b45-0d0e-4553-9ef5-a78112ebad64.png" 
                   alt="Interface Skoolife - Tableau de bord et section finances sur mobile"
