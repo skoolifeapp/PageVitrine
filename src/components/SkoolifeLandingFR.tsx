@@ -51,7 +51,7 @@ export const SkoolifeLandingFR = () => {
 
             {/* Image des mockups - En gros */}
             <div className="flex justify-center">
-              <div className="relative w-full max-w-4xl animate-slide-in-right">
+              <div className="relative w-full max-w-lg animate-slide-in-right">
                 <img 
                   src="/lovable-uploads/894d4025-3a81-43ef-98d6-abd4e8935869.png" 
                   alt="Interface Skoolife - Tableau de bord et section finances sur mobile"
