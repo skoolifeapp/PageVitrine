@@ -104,7 +104,6 @@ export const SkoolifeWaitlistFormFR = () => {
         school: formData.school || null,
         study_year: formData.studyYear || null,
         needs: formData.mainNeeds.length > 0 ? formData.mainNeeds : null,
-        current_tools: null, // Pas dans le formulaire actuel
         purchase_intent: formData.purchaseIntent ? parseInt(formData.purchaseIntent) : null,
         beta_optin: formData.betaTester,
         marketing_optin: formData.marketingOptIn,
@@ -120,29 +119,18 @@ export const SkoolifeWaitlistFormFR = () => {
       };
 
       // Insérer dans Supabase
-      const { data: leadData, error: leadError } = await supabase
-        .from("leads")
-        .insert([payload])
-        .select("id")
-        .single();
+      const { error: insertError } = await supabase
+        .from("waitlist")
+        .insert([payload]);
 
-      if (leadError) {
-        if (leadError.code === '23505') { // Contrainte d'unicité violée (email déjà existant)
+      if (insertError) {
+        if (insertError.code === '23505') { // Contrainte d'unicité violée (email déjà existant)
           setErrors({ email: "Cet email est déjà inscrit sur la liste d'attente." });
         } else {
           setErrors({ general: "Erreur lors de l'inscription. Veuillez réessayer." });
-          console.error('Erreur Supabase:', leadError);
+          console.error('Erreur Supabase:', insertError);
         }
         return;
-      }
-
-      // Optionnel : créer un événement
-      if (leadData?.id) {
-        await supabase.from("lead_events").insert([{
-          lead_id: leadData.id,
-          event_name: "form_submit",
-          metadata: null
-        }]);
       }
 
       // Fallback localStorage en cas d'échec partiel

@@ -14,78 +14,11 @@ export type Database = {
   }
   public: {
     Tables: {
-      lead_events: {
-        Row: {
-          event_name: string
-          event_time: string
-          id: string
-          lead_id: string | null
-          metadata: Json | null
-        }
-        Insert: {
-          event_name: string
-          event_time?: string
-          id?: string
-          lead_id?: string | null
-          metadata?: Json | null
-        }
-        Update: {
-          event_name?: string
-          event_time?: string
-          id?: string
-          lead_id?: string | null
-          metadata?: Json | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "lead_events_lead_id_fkey"
-            columns: ["lead_id"]
-            isOneToOne: false
-            referencedRelation: "leads"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      lead_scores: {
-        Row: {
-          lead_id: string
-          reasons: string[] | null
-          score: number
-          segment: string
-          updated_at: string
-        }
-        Insert: {
-          lead_id: string
-          reasons?: string[] | null
-          score?: number
-          segment?: string
-          updated_at?: string
-        }
-        Update: {
-          lead_id?: string
-          reasons?: string[] | null
-          score?: number
-          segment?: string
-          updated_at?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "lead_scores_lead_id_fkey"
-            columns: ["lead_id"]
-            isOneToOne: true
-            referencedRelation: "leads"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      leads: {
+      waitlist: {
         Row: {
           beta_optin: boolean | null
-          buy_timeframe: string | null
-          cookie_consent_version: string | null
           country: string | null
           created_at: string
-          current_tools: string | null
           device_type: string | null
           email: string
           first_name: string | null
@@ -97,7 +30,6 @@ export type Database = {
           purchase_intent: number | null
           referrer: string | null
           school: string | null
-          status: string | null
           study_year: string | null
           updated_at: string
           utm_campaign: string | null
@@ -108,11 +40,8 @@ export type Database = {
         }
         Insert: {
           beta_optin?: boolean | null
-          buy_timeframe?: string | null
-          cookie_consent_version?: string | null
           country?: string | null
           created_at?: string
-          current_tools?: string | null
           device_type?: string | null
           email: string
           first_name?: string | null
@@ -124,7 +53,6 @@ export type Database = {
           purchase_intent?: number | null
           referrer?: string | null
           school?: string | null
-          status?: string | null
           study_year?: string | null
           updated_at?: string
           utm_campaign?: string | null
@@ -135,11 +63,8 @@ export type Database = {
         }
         Update: {
           beta_optin?: boolean | null
-          buy_timeframe?: string | null
-          cookie_consent_version?: string | null
           country?: string | null
           created_at?: string
-          current_tools?: string | null
           device_type?: string | null
           email?: string
           first_name?: string | null
@@ -151,7 +76,6 @@ export type Database = {
           purchase_intent?: number | null
           referrer?: string | null
           school?: string | null
-          status?: string | null
           study_year?: string | null
           updated_at?: string
           utm_campaign?: string | null
