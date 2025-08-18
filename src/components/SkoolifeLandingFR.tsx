@@ -46,64 +46,6 @@ export const SkoolifeLandingFR = () => {
               </Button>
             </div>
 
-            {/* Aperçus de l'application */}
-            <div className="max-w-5xl mx-auto mt-16">
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 animate-slide-up">
-                <div className="text-center">
-                  <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-4 mb-4">
-                    <img 
-                      src="/lovable-uploads/453ba0e5-a950-4391-ac5b-c41049833605.png" 
-                      alt="Tableau de bord Skoolife - Vue d'ensemble des tâches, planning et finances"
-                      className="w-full max-w-[200px] mx-auto drop-shadow-lg"
-                    />
-                  </div>
-                  <h3 className="font-semibold font-heading text-sm text-foreground mb-1">Tableau de bord</h3>
-                  <p className="text-xs text-muted-foreground font-body">Vue globale de votre vie étudiante</p>
-                </div>
-
-                <div className="text-center">
-                  <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-4 mb-4">
-                    <img 
-                      src="/lovable-uploads/ef331330-9a2c-418f-9331-e7e3c8bfd48b.png" 
-                      alt="Section Finances Skoolife - Suivi des revenus, dépenses et budget étudiant"
-                      className="w-full max-w-[200px] mx-auto drop-shadow-lg"
-                    />
-                  </div>
-                  <h3 className="font-semibold font-heading text-sm text-foreground mb-1">Finances</h3>
-                  <p className="text-xs text-muted-foreground font-body">Gérez votre budget étudiant</p>
-                </div>
-
-                <div className="text-center">
-                  <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-4 mb-4">
-                    <img 
-                      src="/lovable-uploads/8278dfe7-0435-464d-833a-36111fc2b639.png" 
-                      alt="To-Do List Skoolife - Gestion des tâches avec priorités et catégories"
-                      className="w-full max-w-[200px] mx-auto drop-shadow-lg"
-                    />
-                  </div>
-                  <h3 className="font-semibold font-heading text-sm text-foreground mb-1">Tâches</h3>
-                  <p className="text-xs text-muted-foreground font-body">Organisez vos priorités</p>
-                </div>
-
-                <div className="text-center">
-                  <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-4 mb-4">
-                    <img 
-                      src="/lovable-uploads/d3faf32b-130e-4ae1-abe3-4a823ec39e4e.png" 
-                      alt="Section Documents Skoolife - Stockage et organisation de tous vos documents étudiants"
-                      className="w-full max-w-[200px] mx-auto drop-shadow-lg"
-                    />
-                  </div>
-                  <h3 className="font-semibold font-heading text-sm text-foreground mb-1">Documents</h3>
-                  <p className="text-xs text-muted-foreground font-body">Tous vos fichiers organisés</p>
-                </div>
-              </div>
-              
-              <div className="text-center mt-8">
-                <p className="text-muted-foreground font-body text-sm max-w-2xl mx-auto">
-                  Une interface mobile-first pensée pour les étudiants. Simple, élégante et efficace — exactement ce dont vous avez besoin pour réussir.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
