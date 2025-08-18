@@ -256,20 +256,20 @@ export const SkoolifeWaitlistFormFR = () => {
               />
             </div>
 
-            {/* Année d'étude */}
+            {/* Études */}
             <div className="space-y-2">
-              <Label htmlFor="studyYear" className="font-body">Année d'étude</Label>
+              <Label htmlFor="studyYear" className="font-body">Études</Label>
               <Select onValueChange={(value) => setFormData(prev => ({ ...prev, studyYear: value }))}>
                 <SelectTrigger className="font-body">
-                  <SelectValue placeholder="Sélectionnez l'année" />
+                  <SelectValue placeholder="Sélectionnez vos études" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="L1">L1</SelectItem>
-                  <SelectItem value="L2">L2</SelectItem>
-                  <SelectItem value="L3">L3</SelectItem>
-                  <SelectItem value="M1">M1</SelectItem>
-                  <SelectItem value="M2">M2</SelectItem>
-                  <SelectItem value="Autre">Autre</SelectItem>
+                  <SelectItem value="BTS">BTS</SelectItem>
+                  <SelectItem value="Licence">Licence</SelectItem>
+                  <SelectItem value="Bachelor">Bachelor</SelectItem>
+                  <SelectItem value="Master">Master</SelectItem>
+                  <SelectItem value="Mastère">Mastère</SelectItem>
+                  <SelectItem value="BUT">BUT</SelectItem>
                 </SelectContent>
               </Select>
             </div>
