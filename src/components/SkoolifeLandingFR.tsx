@@ -33,7 +33,7 @@ export const SkoolifeLandingFR = () => {
                 <Button 
                   onClick={() => scrollToSection('inscription')}
                   size="lg"
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body px-8 py-3 text-lg"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body px-8 py-3 text-lg shadow-skoolife hover:shadow-skoolife-lg transition-all duration-200"
                 >
                   Rejoindre la liste d'attente
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -42,7 +42,7 @@ export const SkoolifeLandingFR = () => {
                   onClick={() => scrollToSection('modules')}
                   variant="outline"
                   size="lg"
-                  className="font-body px-8 py-3 text-lg border-border hover:bg-accent"
+                  className="font-body px-8 py-3 text-lg border-border hover:bg-accent shadow-sm hover:shadow-skoolife transition-all duration-200"
                 >
                   En savoir plus
                   <ChevronDown className="ml-2 h-5 w-5" />
@@ -56,7 +56,7 @@ export const SkoolifeLandingFR = () => {
                 <img 
                   src="/lovable-uploads/025c2b45-0d0e-4553-9ef5-a78112ebad64.png" 
                   alt="Interface Skoolife - Tableau de bord et section finances sur mobile"
-                  className="w-full max-w-lg mx-auto drop-shadow-2xl hover-scale"
+                  className="w-full max-w-lg mx-auto shadow-skoolife-xl hover-scale transition-all duration-300"
                 />
               </div>
             </div>
@@ -84,7 +84,7 @@ export const SkoolifeLandingFR = () => {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="hover:shadow-skoolife transition-shadow duration-200 group">
+            <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader>
                 <Calendar className="h-8 w-8 text-primary mb-2" />
                 <CardTitle className="font-heading text-lg flex items-center justify-between">
@@ -99,7 +99,7 @@ export const SkoolifeLandingFR = () => {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-skoolife transition-shadow duration-200 group">
+            <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader>
                 <CheckSquare className="h-8 w-8 text-primary mb-2" />
                 <CardTitle className="font-heading text-lg flex items-center justify-between">
@@ -114,7 +114,7 @@ export const SkoolifeLandingFR = () => {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-skoolife transition-shadow duration-200 group">
+            <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader>
                 <CreditCard className="h-8 w-8 text-primary mb-2" />
                 <CardTitle className="font-heading text-lg flex items-center justify-between">
@@ -129,7 +129,7 @@ export const SkoolifeLandingFR = () => {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-skoolife transition-shadow duration-200 group">
+            <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader>
                 <FileText className="h-8 w-8 text-primary mb-2" />
                 <CardTitle className="font-heading text-lg flex items-center justify-between">
@@ -242,7 +242,7 @@ export const SkoolifeLandingFR = () => {
           </div>
 
           <Accordion type="single" collapsible className="space-y-4">
-            <AccordionItem value="item-1" className="bg-card rounded-lg px-6">
+            <AccordionItem value="item-1" className="bg-card rounded-lg px-6 shadow-sm hover:shadow-skoolife transition-shadow duration-200">
               <AccordionTrigger className="font-heading text-left">
                 Quand Skoolife sera-t-il disponible ?
               </AccordionTrigger>
@@ -251,7 +251,7 @@ export const SkoolifeLandingFR = () => {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-2" className="bg-card rounded-lg px-6">
+            <AccordionItem value="item-2" className="bg-card rounded-lg px-6 shadow-sm hover:shadow-skoolife transition-shadow duration-200">
               <AccordionTrigger className="font-heading text-left">
                 Quelles plateformes Skoolife supportera-t-il ?
               </AccordionTrigger>
@@ -260,7 +260,7 @@ export const SkoolifeLandingFR = () => {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-3" className="bg-card rounded-lg px-6">
+            <AccordionItem value="item-3" className="bg-card rounded-lg px-6 shadow-sm hover:shadow-skoolife transition-shadow duration-200">
               <AccordionTrigger className="font-heading text-left">
                 Combien coûtera Skoolife ?
               </AccordionTrigger>
@@ -269,7 +269,7 @@ export const SkoolifeLandingFR = () => {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-4" className="bg-card rounded-lg px-6">
+            <AccordionItem value="item-4" className="bg-card rounded-lg px-6 shadow-sm hover:shadow-skoolife transition-shadow duration-200">
               <AccordionTrigger className="font-heading text-left">
                 Puis-je synchroniser avec mon calendrier et mes outils existants ?
               </AccordionTrigger>
@@ -278,7 +278,7 @@ export const SkoolifeLandingFR = () => {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-5" className="bg-card rounded-lg px-6">
+            <AccordionItem value="item-5" className="bg-card rounded-lg px-6 shadow-sm hover:shadow-skoolife transition-shadow duration-200">
               <AccordionTrigger className="font-heading text-left">
                 Mes données sont-elles sécurisées et privées ?
               </AccordionTrigger>
@@ -287,7 +287,7 @@ export const SkoolifeLandingFR = () => {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-6" className="bg-card rounded-lg px-6">
+            <AccordionItem value="item-6" className="bg-card rounded-lg px-6 shadow-sm hover:shadow-skoolife transition-shadow duration-200">
               <AccordionTrigger className="font-heading text-left">
                 Qu'est-ce qui rend Skoolife différent des autres applications étudiantes ?
               </AccordionTrigger>
@@ -296,7 +296,7 @@ export const SkoolifeLandingFR = () => {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-7" className="bg-card rounded-lg px-6">
+            <AccordionItem value="item-7" className="bg-card rounded-lg px-6 shadow-sm hover:shadow-skoolife transition-shadow duration-200">
               <AccordionTrigger className="font-heading text-left">
                 Puis-je être testeur bêta ?
               </AccordionTrigger>
@@ -309,7 +309,7 @@ export const SkoolifeLandingFR = () => {
       </section>
 
       {/* Pied de page */}
-      <footer className="bg-card border-t border-border px-4 sm:px-6 lg:px-8 py-12">
+      <footer className="bg-card border-t border-border px-4 sm:px-6 lg:px-8 py-12 shadow-skoolife-lg">
         <div className="container max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
