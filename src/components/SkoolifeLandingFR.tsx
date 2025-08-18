@@ -20,7 +20,7 @@ export const SkoolifeLandingFR = () => {
         <div className="container max-w-7xl mx-auto">
           <div className="text-center animate-fade-in">
             {/* Contenu texte */}
-            <div className="mb-8 sm:mb-12 lg:mb-16">
+            <div className="mb-4 sm:mb-6 lg:mb-8">
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-3 sm:mb-4 leading-tight">
                 La vie étudiante, <span className="text-primary">simplifiée</span>
               </h1>
@@ -53,7 +53,7 @@ export const SkoolifeLandingFR = () => {
             <div className="flex justify-center">
               <div className="relative w-full max-w-4xl animate-slide-in-right">
                 <img 
-                  src="/lovable-uploads/025c2b45-0d0e-4553-9ef5-a78112ebad64.png" 
+                  src="/lovable-uploads/894d4025-3a81-43ef-98d6-abd4e8935869.png" 
                   alt="Interface Skoolife - Tableau de bord et section finances sur mobile"
                   className="w-full h-auto mx-auto hover-scale transition-all duration-300"
                 />
