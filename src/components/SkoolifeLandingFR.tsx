@@ -1,14 +1,44 @@
+import { useState } from "react";
 import { SkoolifeHeaderFR } from "./SkoolifeHeaderFR";
 import { SkoolifeWaitlistFormFR } from "./SkoolifeWaitlistFormFR";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Calendar, CheckSquare, CreditCard, FileText, CheckCircle, ArrowDown, ArrowRight, ChevronDown } from "lucide-react";
+import { Calendar, CheckSquare, CreditCard, FileText, CheckCircle, ArrowDown, ArrowRight, ChevronDown, ChevronLeft, MoreHorizontal } from "lucide-react";
 
 export const SkoolifeLandingFR = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const carouselImages = [
+    {
+      src: "/lovable-uploads/40a6cc04-71c3-4971-9cc3-c2ee3ebc625c.png",
+      alt: "Interface Skoolife - Tableau de bord avec tâches, planning et finances",
+      title: "Tableau de bord",
+      description: "Vue d'ensemble synchronisée en temps réel"
+    },
+    {
+      src: "/lovable-uploads/0f16d636-9af5-4fa8-aa5a-b3aad758c4fd.png",
+      alt: "Interface Skoolife - Ma To-Do List avec gestion des tâches",
+      title: "Ma To-Do List",
+      description: "Gestion intelligente de vos tâches quotidiennes"
+    }
+  ];
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
   };
 
   return (
@@ -49,23 +79,63 @@ export const SkoolifeLandingFR = () => {
               </div>
             </div>
 
-            {/* Carrousel d'images */}
+            {/* Carrousel d'images interactif */}
             <div className="relative max-w-md mx-auto">
               <div className="relative overflow-hidden rounded-2xl shadow-skoolife-xl bg-gradient-to-br from-background to-muted/20 p-6">
                 <div className="relative aspect-[9/16] max-w-xs mx-auto">
-                  <img 
-                    src="/lovable-uploads/40a6cc04-71c3-4971-9cc3-c2ee3ebc625c.png"
-                    alt="Interface Skoolife - Tableau de bord avec tâches, planning et finances"
-                    className="w-full h-full object-contain rounded-xl hover-scale transition-all duration-500"
-                  />
+                  <div className="relative w-full h-full">
+                    <img 
+                      src={carouselImages[currentSlide].src}
+                      alt={carouselImages[currentSlide].alt}
+                      className="w-full h-full object-contain rounded-xl hover-scale transition-all duration-500"
+                    />
+                    
+                    {/* Boutons de navigation */}
+                    <button
+                      onClick={prevSlide}
+                      className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-background/90 hover:bg-background border border-border rounded-full flex items-center justify-center shadow-sm transition-all duration-200 hover:shadow-skoolife group"
+                      aria-label="Image précédente"
+                    >
+                      <ChevronLeft className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                    </button>
+                    
+                    <button
+                      onClick={nextSlide}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-background/90 hover:bg-background border border-border rounded-full flex items-center justify-center shadow-sm transition-all duration-200 hover:shadow-skoolife group"
+                      aria-label="Image suivante"
+                    >
+                      <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                    </button>
+                  </div>
+                </div>
+                
+                {/* Titre et description de la slide actuelle */}
+                <div className="text-center mt-4 mb-4">
+                  <h3 className="font-heading text-lg font-semibold text-foreground mb-1">
+                    {carouselImages[currentSlide].title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground font-body">
+                    {carouselImages[currentSlide].description}
+                  </p>
                 </div>
                 
                 {/* Indicateurs de navigation */}
-                <div className="flex justify-center mt-6 space-x-2">
-                  <div className="w-2 h-2 rounded-full bg-primary shadow-sm"></div>
-                  <div className="w-2 h-2 rounded-full bg-muted-foreground/30"></div>
-                  <div className="w-2 h-2 rounded-full bg-muted-foreground/30"></div>
-                  <div className="w-2 h-2 rounded-full bg-muted-foreground/30"></div>
+                <div className="flex justify-center space-x-2">
+                  {carouselImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => goToSlide(index)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === currentSlide 
+                          ? 'bg-primary shadow-sm scale-125' 
+                          : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                      }`}
+                      aria-label={`Aller à l'image ${index + 1}`}
+                    />
+                  ))}
+                  {/* Indicateurs pour les slides futures */}
+                  <div className="w-2 h-2 rounded-full bg-muted-foreground/20"></div>
+                  <div className="w-2 h-2 rounded-full bg-muted-foreground/20"></div>
                 </div>
               </div>
               
