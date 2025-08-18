@@ -50,8 +50,8 @@ export const SkoolifeLandingFR = () => {
             <div className="max-w-lg mx-auto">
               <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 animate-slide-up">
                 <img 
-                  src="/lovable-uploads/f20eea56-b9b0-4556-833e-2283c92ff59b.png" 
-                  alt="Maquette de l'interface Skoolife - Module Mes Finances montrant le suivi des transactions, budget et connexion bancaire"
+                  src="/lovable-uploads/aa2ccfe6-4a1c-4e24-8450-fbbb674f6b8c.png" 
+                  alt="Maquette de l'interface Skoolife - Tableau de bord principal montrant les tâches, planning et finances intégrés"
                   className="w-full max-w-xs mx-auto drop-shadow-2xl"
                 />
                 <p className="text-muted-foreground font-body text-sm text-center mt-6">
