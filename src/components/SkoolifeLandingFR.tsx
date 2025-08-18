@@ -51,11 +51,11 @@ export const SkoolifeLandingFR = () => {
 
             {/* Image des mockups */}
             <div className="flex justify-center lg:justify-end">
-              <div className="relative max-w-lg animate-slide-in-right">
+              <div className="relative max-w-xl animate-slide-in-right">
                 <img 
                   src="/lovable-uploads/025c2b45-0d0e-4553-9ef5-a78112ebad64.png" 
                   alt="Interface Skoolife - Tableau de bord et section finances sur mobile"
-                  className="w-full max-w-md mx-auto drop-shadow-2xl hover-scale"
+                  className="w-full max-w-lg mx-auto drop-shadow-2xl hover-scale"
                 />
               </div>
             </div>
