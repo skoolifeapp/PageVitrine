@@ -17,35 +17,48 @@ export const SkoolifeLandingFR = () => {
 
       {/* Section Héro */}
       <section className="px-4 sm:px-6 lg:px-8 pt-16 pb-20">
-        <div className="container max-w-6xl mx-auto text-center">
-          <div className="animate-fade-in">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading text-foreground mb-6 leading-tight">
-              Skoolife vous aide à gérer votre{" "}
-              <span className="text-primary">vie étudiante</span> — pas seulement vos devoirs.
-            </h1>
-            <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto font-body leading-relaxed">
-              Planificateur, tâches, finances et documents. Tout au même endroit.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Link to="/waitlist">
+        <div className="container max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center animate-fade-in">
+            {/* Contenu texte */}
+            <div className="text-center lg:text-left">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading text-foreground mb-6 leading-tight">
+                Skoolife vous aide à gérer votre{" "}
+                <span className="text-primary">vie étudiante</span> — pas seulement vos devoirs.
+              </h1>
+              <p className="text-xl sm:text-2xl text-muted-foreground mb-8 font-body leading-relaxed">
+                Planificateur, tâches, finances et documents. Tout au même endroit.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+                <Link to="/waitlist">
+                  <Button 
+                    size="lg"
+                    className="bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body px-8 py-3 text-lg"
+                  >
+                    Rejoindre la liste d'attente
+                  </Button>
+                </Link>
                 <Button 
+                  onClick={() => scrollToSection('principe')}
+                  variant="outline"
                   size="lg"
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body px-8 py-3 text-lg"
+                  className="font-body px-8 py-3 text-lg border-border hover:bg-accent"
                 >
-                  Rejoindre la liste d'attente
+                  En savoir plus
                 </Button>
-              </Link>
-              <Button 
-                onClick={() => scrollToSection('principe')}
-                variant="outline"
-                size="lg"
-                className="font-body px-8 py-3 text-lg border-border hover:bg-accent"
-              >
-                En savoir plus
-              </Button>
+              </div>
             </div>
 
+            {/* Image des mockups */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative max-w-lg animate-slide-in-right">
+                <img 
+                  src="/lovable-uploads/025c2b45-0d0e-4553-9ef5-a78112ebad64.png" 
+                  alt="Interface Skoolife - Tableau de bord et section finances sur mobile"
+                  className="w-full max-w-md mx-auto drop-shadow-2xl hover-scale"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
