@@ -14,13 +14,13 @@ export const SkoolifeHeaderFR = () => {
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <div className="flex items-center">
             <img 
               src="/lovable-uploads/657ab9d7-4590-4bdb-acc9-560af6d9c887.png" 
               alt="Skoolife" 
-              className="h-12 w-auto"
+              className="h-20 w-auto"
             />
           </div>
 
