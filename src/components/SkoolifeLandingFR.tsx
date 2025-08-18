@@ -46,15 +46,17 @@ export const SkoolifeLandingFR = () => {
               </Button>
             </div>
 
-            {/* Maquette d'application légère */}
-            <div className="max-w-2xl mx-auto">
-              <div className="bg-card border border-border rounded-xl shadow-skoolife p-8 animate-slide-up">
-                <div className="bg-primary/10 rounded-lg p-6 mb-4">
-                  <Smartphone className="h-16 w-16 text-primary mx-auto mb-4" />
-                  <p className="text-muted-foreground font-body text-sm">
-                    Maquette d'application à venir — interface claire et mobile-first conçue pour les étudiants
-                  </p>
-                </div>
+            {/* Maquette d'application */}
+            <div className="max-w-lg mx-auto">
+              <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 animate-slide-up">
+                <img 
+                  src="/lovable-uploads/f20eea56-b9b0-4556-833e-2283c92ff59b.png" 
+                  alt="Maquette de l'interface Skoolife - Module Mes Finances montrant le suivi des transactions, budget et connexion bancaire"
+                  className="w-full max-w-xs mx-auto drop-shadow-2xl"
+                />
+                <p className="text-muted-foreground font-body text-sm text-center mt-6">
+                  Maquette d'application à venir — interface claire et mobile-first conçue pour les étudiants
+                </p>
               </div>
             </div>
           </div>
