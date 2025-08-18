@@ -23,10 +23,13 @@ export const SkoolifeLandingFR = () => {
             <div className="text-center lg:text-left">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading text-foreground mb-6 leading-tight">
                 Skoolife vous aide à gérer votre{" "}
-                <span className="text-primary">vie étudiante</span> — pas seulement vos devoirs.
+                <span className="text-primary relative">
+                  vie étudiante
+                  <span className="absolute -bottom-1 left-0 w-full h-2 bg-primary/20 -z-10"></span>
+                </span> — pas seulement vos devoirs.
               </h1>
               <p className="text-xl sm:text-2xl text-muted-foreground mb-8 font-body leading-relaxed">
-                Planificateur, tâches, finances et documents. Tout au même endroit.
+                Planificateur, tâches, finances et documents. <span className="text-primary font-semibold">Tout au même endroit.</span>
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
@@ -76,10 +79,10 @@ export const SkoolifeLandingFR = () => {
         <div className="container max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4">
-              Quatre modules essentiels
+              <span className="text-primary">Quatre</span> modules essentiels
             </h2>
             <p className="text-lg text-muted-foreground font-body max-w-2xl mx-auto">
-              Tout ce dont un étudiant a besoin pour gérer sa vie quotidienne, intégré de manière transparente.
+              Tout ce dont un étudiant a besoin pour gérer sa vie quotidienne, <span className="text-primary font-semibold">intégré de manière transparente.</span>
             </p>
           </div>
 
@@ -94,7 +97,7 @@ export const SkoolifeLandingFR = () => {
               </CardHeader>
               <CardContent>
                 <CardDescription className="font-body text-sm">
-                  Agenda clair, synchronisation avec les calendriers existants, rappels utiles qui ne submergent pas.
+                  Agenda clair, <span className="text-primary font-medium">synchronisation</span> avec les calendriers existants, <span className="text-primary font-medium">rappels utiles</span> qui ne submergent pas.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -109,7 +112,7 @@ export const SkoolifeLandingFR = () => {
               </CardHeader>
               <CardContent>
                 <CardDescription className="font-body text-sm">
-                  Priorités simples, mode focus pour le travail en profondeur, saisie de tâches sans friction.
+                  <span className="text-primary font-medium">Priorités simples</span>, mode focus pour le travail en profondeur, <span className="text-primary font-medium">saisie de tâches sans friction.</span>
                 </CardDescription>
               </CardContent>
             </Card>
@@ -124,7 +127,7 @@ export const SkoolifeLandingFR = () => {
               </CardHeader>
               <CardContent>
                 <CardDescription className="font-body text-sm">
-                  Suivi des dépenses, configuration rapide de budget, aperçu clair de votre santé financière.
+                  <span className="text-primary font-medium">Suivi des dépenses</span>, configuration rapide de budget, <span className="text-primary font-medium">aperçu clair</span> de votre santé financière.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -139,7 +142,7 @@ export const SkoolifeLandingFR = () => {
               </CardHeader>
               <CardContent>
                 <CardDescription className="font-body text-sm">
-                  Tous les PDF et documents importants au même endroit. Triez, étiquetez et recherchez instantanément.
+                  <span className="text-primary font-medium">Tous les PDF et documents</span> importants au même endroit. Triez, étiquetez et <span className="text-primary font-medium">recherchez instantanément.</span>
                 </CardDescription>
               </CardContent>
             </Card>
@@ -159,10 +162,13 @@ export const SkoolifeLandingFR = () => {
         <div className="container max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4">
-              Problèmes que nous résolvons
+              Problèmes que nous <span className="text-primary relative">
+                résolvons
+                <span className="absolute -bottom-1 left-0 w-full h-2 bg-primary/20 -z-10"></span>
+              </span>
             </h2>
             <p className="text-lg text-muted-foreground font-body">
-              Cela vous dit quelque chose ? Vous n'êtes pas seul.
+              Cela vous dit quelque chose ? <span className="text-primary font-semibold">Vous n'êtes pas seul.</span>
             </p>
           </div>
 
@@ -172,7 +178,7 @@ export const SkoolifeLandingFR = () => {
               <div>
                 <h3 className="font-semibold font-heading text-foreground mb-1">Tâches et événements éparpillés</h3>
                 <p className="text-muted-foreground font-body text-sm">
-                  Plus besoin de jongler entre les applications de calendrier, les notes autocollantes et les rappels aléatoires.
+                  Plus besoin de jongler entre les applications de calendrier, <span className="text-primary font-medium">les notes autocollantes et les rappels aléatoires.</span>
                 </p>
               </div>
             </div>
@@ -182,7 +188,7 @@ export const SkoolifeLandingFR = () => {
               <div>
                 <h3 className="font-semibold font-heading text-foreground mb-1">Échéances et rendez-vous manqués</h3>
                 <p className="text-muted-foreground font-body text-sm">
-                  Des rappels intelligents et des priorités claires vous aident à rester au courant de tout.
+                  Des <span className="text-primary font-medium">rappels intelligents</span> et des priorités claires vous aident à rester au courant de tout.
                 </p>
               </div>
             </div>
@@ -192,7 +198,7 @@ export const SkoolifeLandingFR = () => {
               <div>
                 <h3 className="font-semibold font-heading text-foreground mb-1">Finances personnelles floues</h3>
                 <p className="text-muted-foreground font-body text-sm">
-                  Outils de suivi et de budgétisation simples conçus spécifiquement pour les étudiants.
+                  Outils de suivi et de budgétisation simples <span className="text-primary font-medium">conçus spécifiquement pour les étudiants.</span>
                 </p>
               </div>
             </div>
@@ -202,7 +208,7 @@ export const SkoolifeLandingFR = () => {
               <div>
                 <h3 className="font-semibold font-heading text-foreground mb-1">Documents difficiles à retrouver</h3>
                 <p className="text-muted-foreground font-body text-sm">
-                  Tous vos fichiers importants organisés, étiquetés et consultables en quelques secondes.
+                  Tous vos fichiers importants <span className="text-primary font-medium">organisés, étiquetés et consultables en quelques secondes.</span>
                 </p>
               </div>
             </div>
@@ -222,7 +228,10 @@ export const SkoolifeLandingFR = () => {
         <div className="container max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mb-4">
-              Prêt à vous organiser ?
+              Prêt à vous <span className="text-primary relative">
+                organiser
+                <span className="absolute -bottom-1 left-0 w-full h-2 bg-primary/20 -z-10"></span>
+              </span> ?
             </h2>
           </div>
           <SkoolifeWaitlistFormFR />
