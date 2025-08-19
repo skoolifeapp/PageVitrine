@@ -13,17 +13,8 @@ export const SkoolifeHeaderFR = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border shadow-header">
-      <div className="container max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <div className="container max-w-4xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
-          {/* Logo */}
-          <div className="flex items-center">
-            <img 
-              src="/lovable-uploads/b8c3645b-f96c-42ec-8bd6-f3bd829eba8e.png" 
-              alt="Skoolife" 
-              className="h-12 sm:h-16 lg:h-24 w-auto"
-            />
-          </div>
-
           {/* Navigation de bureau */}
           <nav className="hidden md:flex items-center space-x-4 lg:space-x-8">
             <button 
