@@ -397,20 +397,6 @@ export const SkoolifeWaitlistFormFR = () => {
         </CardContent>
       </Card>
 
-      {/* CTA collant mobile */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-t border-border p-3 sm:hidden">
-        <Button 
-          onClick={() => {
-            const element = document.getElementById('inscription');
-            element?.scrollIntoView({ behavior: 'smooth' });
-          }}
-          className="w-full bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body shadow-skoolife-lg text-sm py-2.5"
-          size="lg"
-        >
-          Rejoindre la liste d'attente
-          <ArrowRight className="ml-2 h-4 w-4" />
-        </Button>
-      </div>
     </>
   );
 };
