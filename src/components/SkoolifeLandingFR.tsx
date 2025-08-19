@@ -37,7 +37,7 @@ export const SkoolifeLandingFR = () => {
         <div className="container max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center animate-fade-in">
             {/* Contenu texte */}
-            <div className="text-center lg:text-left order-2 lg:order-1">
+            <div className="text-center lg:text-left order-1 lg:order-1">
               {/* Kicker */}
               <div className="inline-block bg-primary/10 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold font-body mb-3 sm:mb-4">
                 Pré-lancement • Janvier 2026
@@ -83,7 +83,7 @@ export const SkoolifeLandingFR = () => {
             </div>
 
             {/* Image des mockups */}
-            <div className="flex justify-center lg:justify-end order-1 lg:order-2">
+            <div className="flex justify-center lg:justify-end order-2 lg:order-2">
               <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-xl animate-slide-in-right">
                 <img 
                   src="/lovable-uploads/025c2b45-0d0e-4553-9ef5-a78112ebad64.png" 
