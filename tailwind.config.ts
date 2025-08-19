@@ -84,6 +84,7 @@ export default {
 			},
 			boxShadow: {
 				'skoolife': 'var(--skoolife-shadow)',
+				'header': 'var(--shadow-header)',
 			},
 			keyframes: {
 				'accordion-down': {
