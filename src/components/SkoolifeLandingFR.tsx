@@ -47,7 +47,7 @@ export const SkoolifeLandingFR = () => {
             <div className="text-center lg:text-left order-1 lg:order-1">
               {/* Kicker */}
               <div className="inline-block bg-primary/10 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold font-body mb-3 sm:mb-4">
-                Pré-lancement • Janvier 2026
+                Pré-lancement • Novembre 2025
               </div>
               
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-heading text-foreground mb-4 sm:mb-6 leading-tight">
@@ -338,7 +338,7 @@ export const SkoolifeLandingFR = () => {
                 Quand Skoolife sera-t-il disponible ?
               </AccordionTrigger>
               <AccordionContent className="font-body text-muted-foreground text-sm">
-                Janvier 2026.
+                Novembre 2025.
               </AccordionContent>
             </AccordionItem>
 
