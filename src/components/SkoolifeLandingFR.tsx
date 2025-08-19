@@ -30,12 +30,14 @@ export const SkoolifeLandingFR = () => {
                 Skoolife vous aide à simplifier votre{" "}
                 <span className="bg-primary text-primary-foreground px-1 rounded">vie étudiante</span>.
               </h1>
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-3 sm:mb-4 font-body leading-relaxed">
+              
+              {/* Sous-titre - Masqué sur mobile */}
+              <p className="hidden sm:block text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-3 sm:mb-4 font-body leading-relaxed">
                 Planificateur, tâches, finances et documents. Tout au même endroit.
               </p>
               
-              {/* Badge prix - Masqué sur très petit mobile */}
-              <div className="hidden xs:block text-sm sm:text-base lg:text-lg text-muted-foreground font-body mb-3 sm:mb-4">
+              {/* Badge prix - Masqué sur mobile */}
+              <div className="hidden sm:block text-sm sm:text-base lg:text-lg text-muted-foreground font-body mb-3 sm:mb-4">
                 À partir de <strong className="text-foreground">3,99 €/mois</strong> ou <strong className="text-foreground">39,99 €/an</strong>
               </div>
               
@@ -44,7 +46,8 @@ export const SkoolifeLandingFR = () => {
                 <strong>Intégrations :</strong> Google Calendar • Comptes bancaires
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start items-center">
+              {/* Boutons CTA - Masqués sur mobile */}
+              <div className="hidden sm:flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start items-center">
                 <Button 
                   onClick={() => scrollToSection('inscription')}
                   size="lg"
@@ -198,10 +201,10 @@ export const SkoolifeLandingFR = () => {
         </div>
       </section>
 
-      {/* Flèche de transition */}
-      <div className="flex justify-center py-8">
+      {/* Flèche de transition - Masquée sur mobile */}
+      <div className="hidden sm:flex justify-center py-4 lg:py-8">
         <div className="animate-bounce">
-          <ArrowDown className="h-6 w-6 text-primary" />
+          <ArrowDown className="h-5 w-5 lg:h-6 lg:w-6 text-primary" />
         </div>
       </div>
 
@@ -275,10 +278,10 @@ export const SkoolifeLandingFR = () => {
         </div>
       </section>
 
-      {/* Flèche de transition */}
-      <div className="flex justify-center py-8">
+      {/* Flèche de transition - Masquée sur mobile */}
+      <div className="hidden sm:flex justify-center py-4 lg:py-8">
         <div className="animate-bounce">
-          <ArrowDown className="h-6 w-6 text-primary" />
+          <ArrowDown className="h-5 w-5 lg:h-6 lg:w-6 text-primary" />
         </div>
       </div>
 
