@@ -177,7 +177,7 @@ export const SkoolifeWaitlistFormFR = () => {
             Vous êtes inscrit ! 
           </h3>
           <p className="text-muted-foreground font-body">
-            Vérifiez votre boîte mail pour confirmer votre place sur la liste d'attente.
+            Nous vous contacterons dès que Skoolife sera disponible.
           </p>
         </CardContent>
       </Card>
