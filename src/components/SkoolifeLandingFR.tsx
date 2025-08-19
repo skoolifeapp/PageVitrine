@@ -130,18 +130,18 @@ export const SkoolifeLandingFR = () => {
             <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader className="pb-3 sm:pb-4">
                 <div className="flex items-center mb-2">
-                  <Calendar className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+                  <CreditCard className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 </div>
                 <CardTitle className="font-heading text-base sm:text-lg">
-                  Planificateur
+                  Finances
                 </CardTitle>
                 <CardDescription className="font-body text-xs sm:text-sm text-primary font-semibold">
-                  Vois ta semaine en un regard.
+                  Sache où part ton argent.
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
                 <CardDescription className="font-body text-xs sm:text-sm text-muted-foreground">
-                  Agenda clair, synchronisation avec les calendriers existants, rappels utiles qui ne submergent pas.
+                  Suivi des dépenses, configuration rapide de budget, aperçu clair de votre santé financière.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -168,18 +168,18 @@ export const SkoolifeLandingFR = () => {
             <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader className="pb-3 sm:pb-4">
                 <div className="flex items-center mb-2">
-                  <CreditCard className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+                  <Calendar className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 </div>
                 <CardTitle className="font-heading text-base sm:text-lg">
-                  Finances étudiantes
+                  Planning
                 </CardTitle>
                 <CardDescription className="font-body text-xs sm:text-sm text-primary font-semibold">
-                  Sache où part ton argent.
+                  Vois ta semaine en un regard.
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
                 <CardDescription className="font-body text-xs sm:text-sm text-muted-foreground">
-                  Suivi des dépenses, configuration rapide de budget, aperçu clair de votre santé financière.
+                  Agenda clair, synchronisation avec les calendriers existants, rappels utiles qui ne submergent pas.
                 </CardDescription>
               </CardContent>
             </Card>
