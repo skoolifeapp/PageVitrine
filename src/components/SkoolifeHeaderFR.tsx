@@ -1,14 +1,9 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
 
 export const SkoolifeHeaderFR = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
-    setIsMenuOpen(false);
   };
 
   return (
@@ -50,41 +45,16 @@ export const SkoolifeHeaderFR = () => {
             </Button>
           </div>
 
-          {/* Bouton menu mobile */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-accent focus:outline-none focus:ring-2 focus:ring-ring"
-            aria-label="Basculer le menu"
-          >
-            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
-        </div>
-
-        {/* Navigation mobile */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border animate-fade-in">
-            <nav className="flex flex-col space-y-3">
-              <button 
-                onClick={() => scrollToSection('modules')}
-                className="text-left text-muted-foreground hover:text-foreground transition-colors duration-200 font-body py-2 text-sm"
-              >
-                Modules
-              </button>
-              <button 
-                onClick={() => scrollToSection('faq')}
-                className="text-left text-muted-foreground hover:text-foreground transition-colors duration-200 font-body py-2 text-sm"
-              >
-                FAQ
-              </button>
-              <Button 
-                onClick={() => scrollToSection('inscription')}
-                className="mt-3 bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body w-full text-sm"
-              >
-                Rejoindre la liste d'attente
-              </Button>
-            </nav>
+          {/* Bouton Rejoindre mobile */}
+          <div className="md:hidden">
+            <Button 
+              onClick={() => scrollToSection('inscription')}
+              className="bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body text-sm px-4 py-2"
+            >
+              Rejoindre
+            </Button>
           </div>
-        )}
+        </div>
       </div>
     </header>
   );
