@@ -75,7 +75,7 @@ export const SkoolifeLandingFR = () => {
                   className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body px-6 sm:px-8 py-3 text-base sm:text-lg shadow-skoolife hover:shadow-skoolife-lg transition-all duration-200"
                 >
                   Rejoindre la liste d'attente
-                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  <ChevronDown className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Button>
                 <Button 
                   onClick={() => scrollToSection('modules')}
@@ -286,7 +286,7 @@ export const SkoolifeLandingFR = () => {
               className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body px-6 sm:px-8 py-3 text-base sm:text-lg shadow-skoolife hover:shadow-skoolife-lg transition-all duration-200"
             >
               Rejoindre la liste d'attente
-              <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+              <ChevronDown className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
             </Button>
           </div>
         </div>

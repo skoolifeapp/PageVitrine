@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
 
 export const SkoolifeHeaderFR = () => {
   const scrollToSection = (sectionId: string) => {
@@ -49,6 +50,7 @@ export const SkoolifeHeaderFR = () => {
               className="bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body text-sm lg:text-base px-4 lg:px-6 py-2"
             >
               Rejoindre la liste d'attente
+              <ChevronDown className="ml-2 h-4 w-4" />
             </Button>
           </div>
 
@@ -59,6 +61,7 @@ export const SkoolifeHeaderFR = () => {
               className="bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body text-sm px-4 py-2"
             >
               Rejoindre
+              <ChevronDown className="ml-2 h-4 w-4" />
             </Button>
           </div>
         </div>

@@ -6,7 +6,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { CheckCircle, ArrowRight } from "lucide-react";
+import { CheckCircle, ArrowDown, ArrowRight, ChevronDown } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
 interface WaitlistData {
@@ -347,6 +347,7 @@ export const SkoolifeWaitlistFormFR = () => {
               size="lg"
             >
               {isSubmitting ? "Inscription en cours..." : "Rejoindre la liste d'attente"}
+              {!isSubmitting && <ChevronDown className="ml-2 h-4 w-4" />}
             </Button>
           </form>
         </CardContent>
