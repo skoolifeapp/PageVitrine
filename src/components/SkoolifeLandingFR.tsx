@@ -4,8 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Calendar, CheckSquare, CreditCard, FileText, CheckCircle, ArrowDown, ArrowRight, ChevronDown } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 export const SkoolifeLandingFR = () => {
+  const [modulesRef, modulesVisible] = useScrollAnimation(0.15);
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
@@ -115,9 +118,11 @@ export const SkoolifeLandingFR = () => {
       </div>
 
       {/* Les 4 modules */}
-      <section id="modules" className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+      <section ref={modulesRef} id="modules" className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <div className="container max-w-6xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <div className={`text-center mb-8 sm:mb-12 lg:mb-16 transition-all duration-700 ${
+            modulesVisible ? 'animate-slide-up opacity-100' : 'opacity-0 translate-y-8'
+          }`}>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-3 sm:mb-4">
               Quatre modules essentiels
             </h2>
@@ -127,7 +132,9 @@ export const SkoolifeLandingFR = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
+            <Card className={`shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group ${
+              modulesVisible ? 'animate-slide-up opacity-100' : 'opacity-0 translate-y-8'
+            }`} style={{ animationDelay: modulesVisible ? '200ms' : '0ms' }}>
               <CardHeader className="pb-3 sm:pb-4">
                 <div className="flex items-center mb-2">
                   <Calendar className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
@@ -146,7 +153,9 @@ export const SkoolifeLandingFR = () => {
               </CardContent>
             </Card>
 
-            <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
+            <Card className={`shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group ${
+              modulesVisible ? 'animate-slide-up opacity-100' : 'opacity-0 translate-y-8'
+            }`} style={{ animationDelay: modulesVisible ? '400ms' : '0ms' }}>
               <CardHeader className="pb-3 sm:pb-4">
                 <div className="flex items-center mb-2">
                   <CheckSquare className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
@@ -165,7 +174,9 @@ export const SkoolifeLandingFR = () => {
               </CardContent>
             </Card>
 
-            <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
+            <Card className={`shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group ${
+              modulesVisible ? 'animate-slide-up opacity-100' : 'opacity-0 translate-y-8'
+            }`} style={{ animationDelay: modulesVisible ? '600ms' : '0ms' }}>
               <CardHeader className="pb-3 sm:pb-4">
                 <div className="flex items-center mb-2">
                   <CreditCard className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
@@ -184,7 +195,9 @@ export const SkoolifeLandingFR = () => {
               </CardContent>
             </Card>
 
-            <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
+            <Card className={`shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group ${
+              modulesVisible ? 'animate-slide-up opacity-100' : 'opacity-0 translate-y-8'
+            }`} style={{ animationDelay: modulesVisible ? '800ms' : '0ms' }}>
               <CardHeader className="pb-3 sm:pb-4">
                 <div className="flex items-center mb-2">
                   <FileText className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
