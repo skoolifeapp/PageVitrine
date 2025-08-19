@@ -1,44 +1,14 @@
-import { useState } from "react";
 import { SkoolifeHeaderFR } from "./SkoolifeHeaderFR";
 import { SkoolifeWaitlistFormFR } from "./SkoolifeWaitlistFormFR";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Calendar, CheckSquare, CreditCard, FileText, CheckCircle, ArrowDown, ArrowRight, ChevronDown, ChevronLeft, MoreHorizontal } from "lucide-react";
+import { Calendar, CheckSquare, CreditCard, FileText, CheckCircle, ArrowDown, ArrowRight, ChevronDown } from "lucide-react";
 
 export const SkoolifeLandingFR = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  
-  const carouselImages = [
-    {
-      src: "/lovable-uploads/34c522e9-b745-402b-bbcc-ff87e9d19fdd.png",
-      alt: "Interface Skoolife - Tableau de bord avec tâches, planning et finances",
-      title: "Tableau de bord",
-      description: "Vue d'ensemble synchronisée en temps réel"
-    },
-    {
-      src: "/lovable-uploads/0f16d636-9af5-4fa8-aa5a-b3aad758c4fd.png",
-      alt: "Interface Skoolife - Ma To-Do List avec gestion des tâches",
-      title: "Ma To-Do List",
-      description: "Gestion intelligente de vos tâches quotidiennes"
-    }
-  ];
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length);
-  };
-
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
   };
 
   return (
@@ -48,17 +18,17 @@ export const SkoolifeLandingFR = () => {
       {/* Section Héro */}
       <section className="px-3 sm:px-6 lg:px-8 pt-8 sm:pt-12 lg:pt-16 pb-12 sm:pb-16 lg:pb-20">
         <div className="container max-w-7xl mx-auto">
-          <div className="text-center animate-fade-in">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center animate-fade-in">
             {/* Contenu texte */}
-            <div className="mb-8 sm:mb-12 lg:mb-16">
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-3 sm:mb-4 leading-tight">
+            <div className="text-center lg:text-left order-2 lg:order-1">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-heading text-foreground mb-4 sm:mb-6 leading-tight">
                 La vie étudiante, <span className="text-primary">simplifiée</span>
               </h1>
-              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6 sm:mb-8 font-body leading-relaxed max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-6 sm:mb-8 font-body leading-relaxed">
                 Planificateur, tâches, finances et documents. Tout au même endroit.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center mb-8 sm:mb-12 lg:mb-16">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start items-stretch sm:items-center">
                 <Button 
                   onClick={() => scrollToSection('inscription')}
                   size="lg"
@@ -79,73 +49,15 @@ export const SkoolifeLandingFR = () => {
               </div>
             </div>
 
-            {/* Carrousel d'images interactif */}
-            <div className="relative max-w-md mx-auto">
-              <div className="relative overflow-hidden rounded-2xl shadow-skoolife-xl bg-gradient-to-br from-background to-muted/20 p-6">
-                <div className="relative aspect-[9/16] max-w-xs mx-auto">
-                  <div className="relative w-full h-full">
-                    <img 
-                      src={carouselImages[currentSlide].src}
-                      alt={carouselImages[currentSlide].alt}
-                      className="w-full h-full object-contain rounded-xl hover-scale transition-all duration-500"
-                    />
-                    
-                    {/* Boutons de navigation */}
-                    <button
-                      onClick={prevSlide}
-                      className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-background/90 hover:bg-background border border-border rounded-full flex items-center justify-center shadow-sm transition-all duration-200 hover:shadow-skoolife group"
-                      aria-label="Image précédente"
-                    >
-                      <ChevronLeft className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                    </button>
-                    
-                    <button
-                      onClick={nextSlide}
-                      className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-background/90 hover:bg-background border border-border rounded-full flex items-center justify-center shadow-sm transition-all duration-200 hover:shadow-skoolife group"
-                      aria-label="Image suivante"
-                    >
-                      <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                    </button>
-                  </div>
-                </div>
-                
-                {/* Titre et description de la slide actuelle */}
-                <div className="text-center mt-4 mb-4">
-                  <h3 className="font-heading text-lg font-semibold text-foreground mb-1">
-                    {carouselImages[currentSlide].title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground font-body">
-                    {carouselImages[currentSlide].description}
-                  </p>
-                </div>
-                
-                {/* Indicateurs de navigation */}
-                <div className="flex justify-center space-x-2">
-                  {carouselImages.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => goToSlide(index)}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        index === currentSlide 
-                          ? 'bg-primary shadow-sm scale-125' 
-                          : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                      }`}
-                      aria-label={`Aller à l'image ${index + 1}`}
-                    />
-                  ))}
-                  {/* Indicateurs pour les slides futures */}
-                  <div className="w-2 h-2 rounded-full bg-muted-foreground/20"></div>
-                  <div className="w-2 h-2 rounded-full bg-muted-foreground/20"></div>
-                </div>
+            {/* Image des mockups */}
+            <div className="flex justify-center lg:justify-end order-1 lg:order-2">
+              <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-xl animate-slide-in-right">
+                <img 
+                  src="/lovable-uploads/025c2b45-0d0e-4553-9ef5-a78112ebad64.png" 
+                  alt="Interface Skoolife - Tableau de bord et section finances sur mobile"
+                  className="w-full h-auto mx-auto hover-scale transition-all duration-300"
+                />
               </div>
-              
-              {/* Badge flottant */}
-              <div className="absolute -top-3 -right-3 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-medium shadow-skoolife animate-pulse">
-                Aperçu de l'app
-              </div>
-              
-              {/* Glow effect */}
-              <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/10 via-transparent to-accent/10 blur-3xl opacity-30 rounded-full scale-110"></div>
             </div>
           </div>
         </div>
