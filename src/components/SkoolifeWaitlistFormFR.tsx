@@ -347,7 +347,6 @@ export const SkoolifeWaitlistFormFR = () => {
               size="lg"
             >
               {isSubmitting ? "Inscription en cours..." : "Rejoindre la liste d'attente"}
-              {!isSubmitting && <ChevronDown className="ml-2 h-4 w-4" />}
             </Button>
           </form>
         </CardContent>
