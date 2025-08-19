@@ -12,7 +12,24 @@ export const SkoolifeLandingFR = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      {/* Decorative yellow background shapes */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Top right blob */}
+        <div className="absolute -top-24 -right-24 w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-skoolife-yellow/10 rounded-full blur-3xl"></div>
+        
+        {/* Middle left shape */}
+        <div className="absolute top-1/3 -left-16 w-32 h-64 md:w-48 md:h-80 lg:w-56 lg:h-96 bg-skoolife-yellow/8 rounded-full blur-2xl rotate-45"></div>
+        
+        {/* Bottom center accent */}
+        <div className="absolute bottom-32 left-1/2 -translate-x-1/2 w-40 h-40 md:w-56 md:h-56 lg:w-72 lg:h-72 bg-skoolife-yellow/6 rounded-full blur-3xl"></div>
+        
+        {/* Small accent dots */}
+        <div className="absolute top-1/4 right-1/4 w-4 h-4 bg-skoolife-yellow/20 rounded-full"></div>
+        <div className="absolute top-2/3 left-1/3 w-2 h-2 bg-skoolife-yellow/15 rounded-full"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-3 h-3 bg-skoolife-yellow/25 rounded-full"></div>
+      </div>
+      
       <SkoolifeHeaderFR />
 
       {/* Section Héro */}
@@ -206,7 +223,9 @@ export const SkoolifeLandingFR = () => {
       </div>
 
       {/* Ce que Skoolife résout */}
-      <section className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-muted/30">
+      <section className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-muted/30 relative">
+        {/* Section-specific decorative elements */}
+        <div className="absolute top-0 right-0 w-24 h-24 md:w-32 md:h-32 bg-skoolife-yellow/5 rounded-full blur-2xl"></div>
         <div className="container max-w-4xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-3 sm:mb-4">
@@ -295,7 +314,9 @@ export const SkoolifeLandingFR = () => {
       </section>
 
       {/* Section FAQ */}
-      <section id="faq" className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-muted/30">
+      <section id="faq" className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-muted/30 relative">
+        {/* FAQ section decorative elements */}
+        <div className="absolute bottom-0 left-0 w-20 h-20 md:w-28 md:h-28 bg-skoolife-yellow/8 rounded-full blur-xl"></div>
         <div className="container max-w-4xl mx-auto">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-3 sm:mb-4">
