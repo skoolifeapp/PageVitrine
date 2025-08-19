@@ -184,14 +184,14 @@ export const SkoolifeWaitlistFormFR = () => {
   }
 
   return (
-    <Card className="max-w-2xl mx-auto shadow-skoolife">
-      <CardHeader className="pb-6">
-        <CardTitle className="text-xl sm:text-2xl font-heading text-center">Rejoindre la liste d'attente Skoolife</CardTitle>
-        <CardDescription className="text-center font-body text-sm sm:text-base">
+    <Card className="max-w-2xl mx-auto">
+      <CardHeader>
+        <CardTitle className="text-2xl font-heading text-center">Rejoindre la liste d'attente Skoolife</CardTitle>
+        <CardDescription className="text-center font-body">
           Soyez le premier informé du lancement et obtenez un accès anticipé aux fonctionnalités bêta.
         </CardDescription>
       </CardHeader>
-      <CardContent className="px-4 sm:px-6">
+      <CardContent>
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Erreur générale */}
           {errors.general && (
@@ -202,13 +202,13 @@ export const SkoolifeWaitlistFormFR = () => {
           
           {/* Email - Requis */}
           <div className="space-y-2">
-            <Label htmlFor="email" className="font-body text-sm">Email *</Label>
+            <Label htmlFor="email" className="font-body">Email *</Label>
             <Input
               id="email"
               type="email"
               value={formData.email}
               onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-              className={`font-body min-h-[44px] ${errors.email ? 'border-destructive focus-visible:ring-destructive' : ''}`}
+              className={`font-body ${errors.email ? 'border-destructive focus-visible:ring-destructive' : ''}`}
               placeholder="votre.email@exemple.com"
               required
             />
@@ -217,50 +217,50 @@ export const SkoolifeWaitlistFormFR = () => {
             )}
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Prénom */}
             <div className="space-y-2">
-              <Label htmlFor="firstName" className="font-body text-sm">Prénom</Label>
+              <Label htmlFor="firstName" className="font-body">Prénom</Label>
               <Input
                 id="firstName"
                 value={formData.firstName}
                 onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
-                className="font-body min-h-[44px]"
+                className="font-body"
                 placeholder="Alex"
               />
             </div>
 
             {/* Pays */}
             <div className="space-y-2">
-              <Label htmlFor="country" className="font-body text-sm">Pays</Label>
+              <Label htmlFor="country" className="font-body">Pays</Label>
               <Input
                 id="country"
                 value={formData.country}
                 onChange={(e) => setFormData(prev => ({ ...prev, country: e.target.value }))}
-                className="font-body min-h-[44px]"
+                className="font-body"
                 placeholder="France"
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* École */}
             <div className="space-y-2">
-              <Label htmlFor="school" className="font-body text-sm">École/Université</Label>
+              <Label htmlFor="school" className="font-body">École/Université</Label>
               <Input
                 id="school"
                 value={formData.school}
                 onChange={(e) => setFormData(prev => ({ ...prev, school: e.target.value }))}
-                className="font-body min-h-[44px]"
+                className="font-body"
                 placeholder="Université de la Sorbonne"
               />
             </div>
 
             {/* Études */}
             <div className="space-y-2">
-              <Label htmlFor="studyYear" className="font-body text-sm">Études</Label>
+              <Label htmlFor="studyYear" className="font-body">Études</Label>
               <Select onValueChange={(value) => setFormData(prev => ({ ...prev, studyYear: value }))}>
-                <SelectTrigger className="font-body min-h-[44px]">
+                <SelectTrigger className="font-body">
                   <SelectValue placeholder="Sélectionnez vos études" />
                 </SelectTrigger>
                 <SelectContent>
@@ -277,17 +277,16 @@ export const SkoolifeWaitlistFormFR = () => {
 
           {/* Besoins principaux */}
           <div className="space-y-3">
-            <Label className="font-body text-sm">Besoins principaux (sélectionnez tout ce qui s'applique)</Label>
+            <Label className="font-body">Besoins principaux (sélectionnez tout ce qui s'applique)</Label>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {needsOptions.map((need) => (
-                <div key={need} className="flex items-center space-x-3 p-2 hover:bg-muted/30 rounded-lg transition-colors">
+                <div key={need} className="flex items-center space-x-2">
                   <Checkbox
                     id={need}
                     checked={formData.mainNeeds.includes(need)}
                     onCheckedChange={(checked) => handleNeedsChange(need, checked as boolean)}
-                    className="min-w-[20px] min-h-[20px]"
                   />
-                  <Label htmlFor={need} className="text-sm font-body cursor-pointer leading-tight">
+                  <Label htmlFor={need} className="text-sm font-body cursor-pointer">
                     {need}
                   </Label>
                 </div>
@@ -297,9 +296,9 @@ export const SkoolifeWaitlistFormFR = () => {
 
           {/* Intention d'achat */}
           <div className="space-y-2">
-            <Label htmlFor="purchaseIntent" className="font-body text-sm">Intention d'achat (échelle 1-5)</Label>
+            <Label htmlFor="purchaseIntent" className="font-body">Intention d'achat (échelle 1-5)</Label>
             <Select onValueChange={(value) => setFormData(prev => ({ ...prev, purchaseIntent: value }))}>
-              <SelectTrigger className="font-body min-h-[44px]">
+              <SelectTrigger className="font-body">
                 <SelectValue placeholder="Quelle est la probabilité que vous achetiez ?" />
               </SelectTrigger>
               <SelectContent>
@@ -313,26 +312,25 @@ export const SkoolifeWaitlistFormFR = () => {
           </div>
 
           {/* Testeur bêta */}
-          <div className="flex items-start space-x-3 p-3 hover:bg-muted/30 rounded-lg transition-colors">
+          <div className="flex items-center space-x-2">
             <Checkbox
               id="betaTester"
               checked={formData.betaTester}
               onCheckedChange={(checked) => setFormData(prev => ({ ...prev, betaTester: checked as boolean }))}
-              className="min-w-[20px] min-h-[20px] mt-0.5"
             />
-            <Label htmlFor="betaTester" className="text-sm font-body cursor-pointer leading-tight">
+            <Label htmlFor="betaTester" className="text-sm font-body cursor-pointer">
               Je suis intéressé(e) pour être testeur bêta
             </Label>
           </div>
 
           {/* Consentement confidentialité - Requis */}
           <div className="space-y-2">
-            <div className="flex items-start space-x-3 p-3 rounded-lg border hover:bg-muted/30 transition-colors">
+            <div className="flex items-start space-x-2">
               <Checkbox
                 id="privacyConsent"
                 checked={formData.privacyConsent}
                 onCheckedChange={(checked) => setFormData(prev => ({ ...prev, privacyConsent: checked as boolean }))}
-                className={`min-w-[20px] min-h-[20px] mt-0.5 ${errors.privacyConsent ? 'border-destructive' : ''}`}
+                className={errors.privacyConsent ? 'border-destructive' : ''}
                 required
               />
               <Label htmlFor="privacyConsent" className="text-sm font-body cursor-pointer leading-tight">
@@ -345,14 +343,13 @@ export const SkoolifeWaitlistFormFR = () => {
           </div>
 
           {/* Opt-in marketing */}
-          <div className="flex items-start space-x-3 p-3 hover:bg-muted/30 rounded-lg transition-colors">
+          <div className="flex items-center space-x-2">
             <Checkbox
               id="marketingOptIn"
               checked={formData.marketingOptIn}
               onCheckedChange={(checked) => setFormData(prev => ({ ...prev, marketingOptIn: checked as boolean }))}
-              className="min-w-[20px] min-h-[20px] mt-0.5"
             />
-            <Label htmlFor="marketingOptIn" className="text-sm font-body cursor-pointer leading-tight">
+            <Label htmlFor="marketingOptIn" className="text-sm font-body cursor-pointer">
               Je souhaite recevoir des actualités sur Skoolife (facultatif)
             </Label>
           </div>
@@ -360,7 +357,7 @@ export const SkoolifeWaitlistFormFR = () => {
           <Button 
             type="submit" 
             disabled={isSubmitting}
-            className="w-full bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body disabled:opacity-50 min-h-[48px] text-base shadow-skoolife hover:shadow-skoolife-lg transition-all duration-200"
+            className="w-full bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body disabled:opacity-50"
             size="lg"
           >
             {isSubmitting ? "Inscription en cours..." : "Rejoindre la liste d'attente"}
