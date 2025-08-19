@@ -15,7 +15,7 @@ interface WaitlistData {
   country: string;
   school: string;
   studyYear: string;
-  mainNeeds: string[];
+  
   purchaseIntent: number;
   betaTester: boolean;
   privacyConsent: boolean;
@@ -42,7 +42,7 @@ export const SkoolifeWaitlistFormFR = () => {
     country: "",
     school: "",
     studyYear: "",
-    mainNeeds: [],
+    
     purchaseIntent: 0,
     betaTester: false,
     privacyConsent: false,
@@ -61,13 +61,6 @@ export const SkoolifeWaitlistFormFR = () => {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const needsOptions = [
-    "Gestion du temps",
-    "Tâches à faire",
-    "Finances étudiantes", 
-    "Motivation & concentration",
-    "Tout-en-un"
-  ];
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
@@ -104,7 +97,7 @@ export const SkoolifeWaitlistFormFR = () => {
         country: formData.country || null,
         school: formData.school || null,
         study_year: formData.studyYear || null,
-        needs: formData.mainNeeds.length > 0 ? formData.mainNeeds : null,
+        
         purchase_intent: formData.purchaseIntent > 0 ? formData.purchaseIntent : null,
         beta_optin: formData.betaTester,
         marketing_optin: formData.marketingOptIn,
@@ -154,19 +147,6 @@ export const SkoolifeWaitlistFormFR = () => {
     }
   };
 
-  const handleNeedsChange = (need: string, checked: boolean) => {
-    if (checked) {
-      setFormData(prev => ({
-        ...prev,
-        mainNeeds: [...prev.mainNeeds, need]
-      }));
-    } else {
-      setFormData(prev => ({
-        ...prev,
-        mainNeeds: prev.mainNeeds.filter(n => n !== need)
-      }));
-    }
-  };
 
   if (isSubmitted) {
     return (
@@ -237,31 +217,6 @@ export const SkoolifeWaitlistFormFR = () => {
               </Select>
             </div>
 
-            {/* Besoins principaux */}
-            <div className="space-y-3">
-              <Label className="font-body text-sm">Besoins principaux (sélectionnez tout ce qui s'applique)</Label>
-              <div className="flex flex-wrap gap-2">
-                {needsOptions.map((need) => (
-                  <label 
-                    key={need}
-                    className={`inline-flex items-center px-2 sm:px-3 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-body cursor-pointer transition-all ${
-                      formData.mainNeeds.includes(need) 
-                        ? 'bg-primary text-primary-foreground' 
-                        : 'bg-muted text-muted-foreground hover:bg-muted/80'
-                    }`}
-                    onClick={() => handleNeedsChange(need, !formData.mainNeeds.includes(need))}
-                  >
-                    <Checkbox
-                      id={need}
-                      checked={formData.mainNeeds.includes(need)}
-                      onCheckedChange={(checked) => handleNeedsChange(need, checked as boolean)}
-                      className="sr-only"
-                    />
-                    {need}
-                  </label>
-                ))}
-              </div>
-            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
               {/* Prénom */}
