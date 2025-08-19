@@ -84,12 +84,23 @@ export const SkoolifeLandingFR = () => {
 
             {/* Image des mockups */}
             <div className="flex justify-center lg:justify-end order-2 lg:order-2">
-              <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-xl animate-slide-in-right">
-                <img 
-                  src="/lovable-uploads/025c2b45-0d0e-4553-9ef5-a78112ebad64.png" 
-                  alt="Interface Skoolife - Tableau de bord et section finances sur mobile"
-                  className="w-full h-auto hover-scale transition-all duration-300"
-                />
+              <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-xl">
+                {/* Glow effect background */}
+                <div className="absolute inset-0 bg-gradient-to-r from-skoolife-yellow/20 to-primary/30 rounded-3xl blur-2xl scale-110 animate-pulse"></div>
+                
+                {/* Floating animation container */}
+                <div className="relative animate-float">
+                  <img 
+                    src="/lovable-uploads/025c2b45-0d0e-4553-9ef5-a78112ebad64.png" 
+                    alt="Interface Skoolife - Tableau de bord et section finances sur mobile"
+                    className="w-full h-auto hover:scale-105 transition-all duration-700 ease-out hover:rotate-1 drop-shadow-2xl hover:drop-shadow-[0_25px_50px_rgba(0,0,0,0.25)]"
+                  />
+                  
+                  {/* Floating accent dots */}
+                  <div className="absolute -top-4 -right-2 w-3 h-3 bg-skoolife-yellow rounded-full animate-bounce-slow opacity-80"></div>
+                  <div className="absolute top-1/3 -left-3 w-2 h-2 bg-skoolife-yellow/60 rounded-full animate-float-delayed opacity-70"></div>
+                  <div className="absolute bottom-1/4 -right-4 w-4 h-4 bg-skoolife-yellow/40 rounded-full animate-bounce-slower opacity-60"></div>
+                </div>
               </div>
             </div>
           </div>
