@@ -130,7 +130,7 @@ export const SkoolifeLandingFR = () => {
             <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader className="pb-3 sm:pb-4">
                 <div className="flex items-center mb-2">
-                  <Calendar className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+                  <Calendar className="h-6 w-6 sm:h-8 sm:w-8 text-primary animate-icon-pulse group-hover:animate-icon-wiggle transition-all duration-200" />
                 </div>
                 <CardTitle className="font-heading text-base sm:text-lg">
                   Planificateur
@@ -149,7 +149,7 @@ export const SkoolifeLandingFR = () => {
             <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader className="pb-3 sm:pb-4">
                 <div className="flex items-center mb-2">
-                  <CheckSquare className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+                  <CheckSquare className="h-6 w-6 sm:h-8 sm:w-8 text-primary animate-icon-bounce group-hover:animate-icon-wiggle transition-all duration-200" />
                 </div>
                 <CardTitle className="font-heading text-base sm:text-lg">
                   Tâches
@@ -168,7 +168,7 @@ export const SkoolifeLandingFR = () => {
             <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader className="pb-3 sm:pb-4">
                 <div className="flex items-center mb-2">
-                  <CreditCard className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+                  <CreditCard className="h-6 w-6 sm:h-8 sm:w-8 text-primary animate-icon-glow group-hover:animate-icon-wiggle transition-all duration-200" />
                 </div>
                 <CardTitle className="font-heading text-base sm:text-lg">
                   Finances étudiantes
@@ -187,7 +187,7 @@ export const SkoolifeLandingFR = () => {
             <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader className="pb-3 sm:pb-4">
                 <div className="flex items-center mb-2">
-                  <FileText className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+                  <FileText className="h-6 w-6 sm:h-8 sm:w-8 text-primary animate-icon-pulse group-hover:animate-icon-wiggle transition-all duration-200" />
                 </div>
                 <CardTitle className="font-heading text-base sm:text-lg">
                   Documents
