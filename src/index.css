@@ -125,3 +125,26 @@
     display: block;
   }
 }
+
+/* Highlight marker effect */
+.marker-highlight {
+  position: relative;
+  display: inline-block;
+  padding: 2px 4px;
+  border-radius: 8px;
+  border: 3px solid hsl(var(--skoolife-yellow));
+  background: transparent;
+  color: inherit;
+}
+
+.marker-highlight::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid hsl(var(--skoolife-yellow));
+  border-radius: 10px;
+  z-index: -1;
+}
