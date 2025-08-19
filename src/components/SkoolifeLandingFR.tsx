@@ -119,7 +119,7 @@ export const SkoolifeLandingFR = () => {
         <div className="container max-w-6xl mx-auto">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-3 sm:mb-4">
-              Quatre modules essentiels
+              Quatre modules <span className="bg-skoolife-yellow text-skoolife-yellow-foreground px-1 rounded">essentiels</span>
             </h2>
             <p className="text-sm sm:text-base lg:text-lg text-muted-foreground font-body max-w-2xl mx-auto">
               Tout ce dont un étudiant a besoin pour gérer sa vie quotidienne, intégré de manière transparente.
@@ -220,7 +220,7 @@ export const SkoolifeLandingFR = () => {
         <div className="container max-w-4xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-3 sm:mb-4">
-              Problèmes que nous résolvons
+              Problèmes que <span className="bg-skoolife-yellow text-skoolife-yellow-foreground px-1 rounded">nous résolvons</span>
             </h2>
             <p className="text-sm sm:text-base lg:text-lg text-muted-foreground font-body">
               Cela vous dit quelque chose ? Vous n'êtes pas seul.
@@ -297,7 +297,7 @@ export const SkoolifeLandingFR = () => {
         <div className="container max-w-4xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-3 sm:mb-4">
-              Prêt à vous organiser ?
+              Prêt à vous <span className="bg-skoolife-yellow text-skoolife-yellow-foreground px-1 rounded">organiser</span> ?
             </h2>
           </div>
           <SkoolifeWaitlistFormFR />
