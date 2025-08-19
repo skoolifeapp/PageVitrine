@@ -3,7 +3,14 @@ import { Button } from "@/components/ui/button";
 export const SkoolifeHeaderFR = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    if (element) {
+      const headerHeight = 80; // Hauteur approximative du header
+      const elementPosition = element.offsetTop - headerHeight;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (
