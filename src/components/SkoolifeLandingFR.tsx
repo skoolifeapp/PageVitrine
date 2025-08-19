@@ -3,7 +3,7 @@ import { SkoolifeWaitlistFormFR } from "./SkoolifeWaitlistFormFR";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { CheckCircle, ArrowDown, ArrowRight, ChevronDown } from "lucide-react";
+import { Calendar, CheckSquare, CreditCard, FileText, CheckCircle, ArrowDown, ArrowRight, ChevronDown } from "lucide-react";
 
 export const SkoolifeLandingFR = () => {
   const scrollToSection = (sectionId: string) => {
@@ -130,18 +130,7 @@ export const SkoolifeLandingFR = () => {
             <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader className="pb-3 sm:pb-4">
                 <div className="flex items-center mb-2">
-                  <div className="h-8 w-8 sm:h-10 sm:w-10 animate-calendar-flip group-hover:animate-icon-wiggle transition-all duration-200">
-                    <svg viewBox="0 0 40 40" className="w-full h-full text-primary">
-                      <rect x="4" y="8" width="32" height="28" rx="2" fill="none" stroke="currentColor" strokeWidth="2"/>
-                      <line x1="4" y1="16" x2="36" y2="16" stroke="currentColor" strokeWidth="2"/>
-                      <circle cx="12" cy="12" r="1" fill="currentColor"/>
-                      <circle cx="28" cy="12" r="1" fill="currentColor"/>
-                      <circle cx="12" cy="24" r="2" fill="currentColor"/>
-                      <circle cx="20" cy="24" r="1.5" fill="currentColor" opacity="0.7"/>
-                      <circle cx="28" cy="24" r="1" fill="currentColor" opacity="0.5"/>
-                      <circle cx="16" cy="30" r="1" fill="currentColor" opacity="0.6"/>
-                    </svg>
-                  </div>
+                  <Calendar className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 </div>
                 <CardTitle className="font-heading text-base sm:text-lg">
                   Planificateur
@@ -160,18 +149,7 @@ export const SkoolifeLandingFR = () => {
             <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader className="pb-3 sm:pb-4">
                 <div className="flex items-center mb-2">
-                  <div className="h-8 w-8 sm:h-10 sm:w-10 animate-task-check group-hover:animate-icon-wiggle transition-all duration-200">
-                    <svg viewBox="0 0 40 40" className="w-full h-full text-primary">
-                      <rect x="4" y="6" width="32" height="28" rx="2" fill="none" stroke="currentColor" strokeWidth="2"/>
-                      <circle cx="12" cy="14" r="2" fill="none" stroke="currentColor" strokeWidth="2"/>
-                      <polyline points="10,14 11.5,15.5 14,13" stroke="currentColor" strokeWidth="2" fill="none"/>
-                      <line x1="18" y1="14" x2="32" y2="14" stroke="currentColor" strokeWidth="2" opacity="0.7"/>
-                      <circle cx="12" cy="22" r="2" fill="none" stroke="currentColor" strokeWidth="2"/>
-                      <line x1="18" y1="22" x2="28" y2="22" stroke="currentColor" strokeWidth="2" opacity="0.5"/>
-                      <circle cx="12" cy="30" r="2" fill="none" stroke="currentColor" strokeWidth="2" opacity="0.4"/>
-                      <line x1="18" y1="30" x2="24" y2="30" stroke="currentColor" strokeWidth="2" opacity="0.3"/>
-                    </svg>
-                  </div>
+                  <CheckSquare className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 </div>
                 <CardTitle className="font-heading text-base sm:text-lg">
                   Tâches
@@ -190,16 +168,7 @@ export const SkoolifeLandingFR = () => {
             <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader className="pb-3 sm:pb-4">
                 <div className="flex items-center mb-2">
-                  <div className="h-8 w-8 sm:h-10 sm:w-10 animate-payment-swipe group-hover:animate-icon-wiggle transition-all duration-200">
-                    <svg viewBox="0 0 40 40" className="w-full h-full text-primary">
-                      <rect x="4" y="12" width="32" height="20" rx="3" fill="none" stroke="currentColor" strokeWidth="2"/>
-                      <line x1="4" y1="18" x2="36" y2="18" stroke="currentColor" strokeWidth="2"/>
-                      <rect x="6" y="22" width="8" height="3" rx="1" fill="currentColor" opacity="0.8"/>
-                      <circle cx="30" cy="24" r="2" fill="none" stroke="currentColor" strokeWidth="1.5"/>
-                      <path d="M8 8 l4 0 M16 8 l4 0 M28 8 l4 0" stroke="currentColor" strokeWidth="2" opacity="0.6"/>
-                      <circle cx="32" cy="8" r="1" fill="currentColor" opacity="0.7"/>
-                    </svg>
-                  </div>
+                  <CreditCard className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 </div>
                 <CardTitle className="font-heading text-base sm:text-lg">
                   Finances étudiantes
@@ -218,17 +187,7 @@ export const SkoolifeLandingFR = () => {
             <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader className="pb-3 sm:pb-4">
                 <div className="flex items-center mb-2">
-                  <div className="h-8 w-8 sm:h-10 sm:w-10 animate-document-organize group-hover:animate-icon-wiggle transition-all duration-200">
-                    <svg viewBox="0 0 40 40" className="w-full h-full text-primary">
-                      <rect x="8" y="6" width="20" height="28" rx="2" fill="none" stroke="currentColor" strokeWidth="2"/>
-                      <line x1="12" y1="12" x2="24" y2="12" stroke="currentColor" strokeWidth="1.5" opacity="0.8"/>
-                      <line x1="12" y1="16" x2="20" y2="16" stroke="currentColor" strokeWidth="1.5" opacity="0.6"/>
-                      <line x1="12" y1="20" x2="22" y2="20" stroke="currentColor" strokeWidth="1.5" opacity="0.7"/>
-                      <rect x="14" y="4" width="16" height="20" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.5"/>
-                      <rect x="16" y="8" width="12" height="16" rx="1" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.3"/>
-                      <circle cx="32" cy="30" r="1.5" fill="currentColor" opacity="0.6"/>
-                    </svg>
-                  </div>
+                  <FileText className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 </div>
                 <CardTitle className="font-heading text-base sm:text-lg">
                   Documents

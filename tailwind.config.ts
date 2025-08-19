@@ -119,66 +119,6 @@ export default {
 				'bounce-slower': {
 					'0%, 100%': { transform: 'translateY(0px) scale(1)' },
 					'50%': { transform: 'translateY(-8px) scale(1.2)' }
-				},
-				'icon-pulse': {
-					'0%, 100%': { 
-						transform: 'scale(1)', 
-						filter: 'drop-shadow(0 0 0 hsl(var(--primary) / 0))' 
-					},
-					'50%': { 
-						transform: 'scale(1.1)', 
-						filter: 'drop-shadow(0 0 8px hsl(var(--primary) / 0.4))' 
-					}
-				},
-				'icon-wiggle': {
-					'0%, 100%': { transform: 'rotate(0deg) scale(1)' },
-					'25%': { transform: 'rotate(-3deg) scale(1.05)' },
-					'75%': { transform: 'rotate(3deg) scale(1.05)' }
-				},
-				'icon-bounce': {
-					'0%, 100%': { transform: 'translateY(0px) scale(1)' },
-					'50%': { transform: 'translateY(-4px) scale(1.1)' }
-				},
-				'icon-glow': {
-					'0%, 100%': { 
-						filter: 'drop-shadow(0 0 0 hsl(var(--primary) / 0))' 
-					},
-					'50%': { 
-						filter: 'drop-shadow(0 0 12px hsl(var(--primary) / 0.6))' 
-					}
-				},
-				'calendar-flip': {
-					'0%': { transform: 'scale(1) rotateY(0deg)', opacity: '1' },
-					'15%': { transform: 'scale(1.02) rotateY(-8deg)', opacity: '0.9' },
-					'30%': { transform: 'scale(1.05) rotateY(8deg)', opacity: '0.8' },
-					'45%': { transform: 'scale(1.02) rotateY(-4deg)', opacity: '0.9' },
-					'60%': { transform: 'scale(1) rotateY(0deg)', opacity: '1' },
-					'100%': { transform: 'scale(1) rotateY(0deg)', opacity: '1' }
-				},
-				'task-check': {
-					'0%': { transform: 'scale(1)', opacity: '0.6' },
-					'20%': { transform: 'scale(0.95)', opacity: '0.7' },
-					'40%': { transform: 'scale(1.1)', opacity: '0.9' },
-					'50%': { transform: 'scale(1.15)', opacity: '1' },
-					'65%': { transform: 'scale(1.05)', opacity: '1' },
-					'80%': { transform: 'scale(1)', opacity: '0.8' },
-					'100%': { transform: 'scale(1)', opacity: '0.6' }
-				},
-				'payment-swipe': {
-					'0%': { transform: 'translateX(0) scale(1)', opacity: '0.7' },
-					'25%': { transform: 'translateX(-8px) scale(1.03)', opacity: '0.8' },
-					'50%': { transform: 'translateX(12px) scale(1.08)', opacity: '1' },
-					'65%': { transform: 'translateX(8px) scale(1.05)', opacity: '0.9' },
-					'80%': { transform: 'translateX(-2px) scale(1.02)', opacity: '0.8' },
-					'100%': { transform: 'translateX(0) scale(1)', opacity: '0.7' }
-				},
-				'document-organize': {
-					'0%': { transform: 'translateY(0) rotate(0deg) scale(1)', opacity: '0.6' },
-					'20%': { transform: 'translateY(-6px) rotate(-3deg) scale(1.02)', opacity: '0.7' },
-					'40%': { transform: 'translateY(-10px) rotate(2deg) scale(1.06)', opacity: '0.9' },
-					'60%': { transform: 'translateY(-8px) rotate(-1deg) scale(1.04)', opacity: '1' },
-					'80%': { transform: 'translateY(-3px) rotate(1deg) scale(1.02)', opacity: '0.8' },
-					'100%': { transform: 'translateY(0) rotate(0deg) scale(1)', opacity: '0.6' }
 				}
 			},
 			animation: {
@@ -189,15 +129,7 @@ export default {
 				'float': 'float 6s ease-in-out infinite',
 				'float-delayed': 'float-delayed 8s ease-in-out infinite',
 				'bounce-slow': 'bounce-slow 3s ease-in-out infinite',
-				'bounce-slower': 'bounce-slower 4s ease-in-out infinite',
-				'icon-pulse': 'icon-pulse 2s ease-in-out infinite',
-				'icon-wiggle': 'icon-wiggle 0.6s ease-in-out',
-				'icon-bounce': 'icon-bounce 1s ease-in-out infinite',
-				'icon-glow': 'icon-glow 2.5s ease-in-out infinite',
-				'calendar-flip': 'calendar-flip 4.5s ease-in-out infinite',
-				'task-check': 'task-check 5s ease-in-out infinite',
-				'payment-swipe': 'payment-swipe 4s ease-in-out infinite',
-				'document-organize': 'document-organize 5.5s ease-in-out infinite'
+				'bounce-slower': 'bounce-slower 4s ease-in-out infinite'
 			}
 		}
 	},
