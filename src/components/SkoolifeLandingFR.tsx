@@ -33,7 +33,7 @@ export const SkoolifeLandingFR = () => {
       <SkoolifeHeaderFR />
 
       {/* Section Héro */}
-      <section className="px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 lg:pt-16 pb-12 sm:pb-16 lg:pb-20">
+      <section className="px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 lg:pt-32 pb-12 sm:pb-16 lg:pb-20">
         <div className="container max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center animate-fade-in">
             {/* Contenu texte */}
