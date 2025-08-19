@@ -221,7 +221,7 @@ export const SkoolifeWaitlistFormFR = () => {
 
             {/* Études */}
             <div className="space-y-2">
-              <Label htmlFor="studyYear" className="font-body text-sm">Année d'études</Label>
+              <Label htmlFor="studyYear" className="font-body text-sm">Études</Label>
               <Select onValueChange={(value) => setFormData(prev => ({ ...prev, studyYear: value }))}>
                 <SelectTrigger className="font-body text-sm">
                   <SelectValue placeholder="Sélectionnez vos études" />
