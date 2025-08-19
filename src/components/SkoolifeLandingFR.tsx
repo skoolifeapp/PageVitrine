@@ -27,8 +27,8 @@ export const SkoolifeLandingFR = () => {
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading text-foreground mb-6 leading-tight">
-                Skoolife vous aide à gérer votre{" "}
-                <span className="bg-primary text-primary-foreground px-1 rounded">vie étudiante</span> — pas seulement vos devoirs.
+                Skoolife vous aide à simplifier votre{" "}
+                <span className="bg-primary text-primary-foreground px-1 rounded">vie étudiante</span>.
               </h1>
               <p className="text-xl sm:text-2xl text-muted-foreground mb-4 font-body leading-relaxed">
                 Planificateur, tâches, finances et documents. Tout au même endroit.

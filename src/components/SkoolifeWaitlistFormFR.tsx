@@ -395,9 +395,6 @@ export const SkoolifeWaitlistFormFR = () => {
             </Button>
           </form>
 
-          <p className="text-xs text-muted-foreground text-center mt-4 font-body">
-            Pas de spam. Tes données restent privées. Désinscription en 1 clic.
-          </p>
         </CardContent>
       </Card>
 
