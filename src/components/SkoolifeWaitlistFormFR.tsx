@@ -170,7 +170,7 @@ export const SkoolifeWaitlistFormFR = () => {
 
   if (isSubmitted) {
     return (
-      <Card className="max-w-md mx-auto animate-fade-in">
+      <Card className="max-w-md mx-auto animate-fade-in mb-20 sm:mb-0">
         <CardContent className="pt-6 text-center">
           <CheckCircle className="h-12 w-12 text-primary mx-auto mb-4" />
           <h3 className="text-lg font-semibold font-heading text-foreground mb-2">
@@ -186,44 +186,44 @@ export const SkoolifeWaitlistFormFR = () => {
 
   return (
     <>
-      <Card className="max-w-2xl mx-auto">
-        <CardHeader>
-          <CardTitle className="text-2xl font-heading text-center">Rejoindre la liste d'attente Skoolife</CardTitle>
-          <CardDescription className="text-center font-body">
+      <Card className="max-w-2xl mx-auto mb-20 sm:mb-0">
+        <CardHeader className="pb-4 sm:pb-6">
+          <CardTitle className="text-xl sm:text-2xl font-heading text-center">Rejoindre la liste d'attente Skoolife</CardTitle>
+          <CardDescription className="text-center font-body text-sm sm:text-base">
             Soyez le premier informé du lancement et obtenez un accès anticipé aux fonctionnalités bêta.
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             {/* Erreur générale */}
             {errors.general && (
-              <div className="p-3 text-sm text-destructive bg-destructive/10 border border-destructive/20 rounded-md">
+              <div className="p-3 text-xs sm:text-sm text-destructive bg-destructive/10 border border-destructive/20 rounded-md">
                 {errors.general}
               </div>
             )}
             
             {/* Email - Requis */}
             <div className="space-y-2">
-              <Label htmlFor="email" className="font-body">Email *</Label>
+              <Label htmlFor="email" className="font-body text-sm">Email *</Label>
               <Input
                 id="email"
                 type="email"
                 value={formData.email}
                 onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                className={`font-body ${errors.email ? 'border-destructive focus-visible:ring-destructive' : ''}`}
+                className={`font-body text-sm ${errors.email ? 'border-destructive focus-visible:ring-destructive' : ''}`}
                 placeholder="votre.email@exemple.com"
                 required
               />
               {errors.email && (
-                <p className="text-sm text-destructive font-body">{errors.email}</p>
+                <p className="text-xs sm:text-sm text-destructive font-body">{errors.email}</p>
               )}
             </div>
 
             {/* Études */}
             <div className="space-y-2">
-              <Label htmlFor="studyYear" className="font-body">Année d'études</Label>
+              <Label htmlFor="studyYear" className="font-body text-sm">Année d'études</Label>
               <Select onValueChange={(value) => setFormData(prev => ({ ...prev, studyYear: value }))}>
-                <SelectTrigger className="font-body">
+                <SelectTrigger className="font-body text-sm">
                   <SelectValue placeholder="Sélectionnez vos études" />
                 </SelectTrigger>
                 <SelectContent>
@@ -239,12 +239,12 @@ export const SkoolifeWaitlistFormFR = () => {
 
             {/* Besoins principaux */}
             <div className="space-y-3">
-              <Label className="font-body">Besoins principaux (sélectionnez tout ce qui s'applique)</Label>
+              <Label className="font-body text-sm">Besoins principaux (sélectionnez tout ce qui s'applique)</Label>
               <div className="flex flex-wrap gap-2">
                 {needsOptions.map((need) => (
                   <label 
                     key={need}
-                    className={`inline-flex items-center px-3 py-2 rounded-full text-sm font-body cursor-pointer transition-all ${
+                    className={`inline-flex items-center px-2 sm:px-3 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-body cursor-pointer transition-all ${
                       formData.mainNeeds.includes(need) 
                         ? 'bg-primary text-primary-foreground' 
                         : 'bg-muted text-muted-foreground hover:bg-muted/80'
@@ -263,47 +263,47 @@ export const SkoolifeWaitlistFormFR = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
               {/* Prénom */}
               <div className="space-y-2">
-                <Label htmlFor="firstName" className="font-body">Prénom</Label>
+                <Label htmlFor="firstName" className="font-body text-sm">Prénom</Label>
                 <Input
                   id="firstName"
                   value={formData.firstName}
                   onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
-                  className="font-body"
+                  className="font-body text-sm"
                   placeholder="Alex"
                 />
               </div>
 
               {/* Pays */}
               <div className="space-y-2">
-                <Label htmlFor="country" className="font-body">Pays</Label>
+                <Label htmlFor="country" className="font-body text-sm">Pays</Label>
                 <Input
                   id="country"
                   value={formData.country}
                   onChange={(e) => setFormData(prev => ({ ...prev, country: e.target.value }))}
-                  className="font-body"
+                  className="font-body text-sm"
                   placeholder="France"
                 />
               </div>
 
               {/* École */}
               <div className="space-y-2">
-                <Label htmlFor="school" className="font-body">École/Université</Label>
+                <Label htmlFor="school" className="font-body text-sm">École/Université</Label>
                 <Input
                   id="school"
                   value={formData.school}
                   onChange={(e) => setFormData(prev => ({ ...prev, school: e.target.value }))}
-                  className="font-body"
+                  className="font-body text-sm"
                   placeholder="Université de la Sorbonne"
                 />
               </div>
             </div>
 
-            {/* Intention d'achat avec radios */}
+            {/* Intention d'achat avec radios - Simplifié sur mobile */}
             <div className="space-y-3">
-              <Label className="font-body">Intention d'achat</Label>
+              <Label className="font-body text-sm">Intention d'achat</Label>
               <RadioGroup 
                 value={formData.purchaseIntent.toString()} 
                 onValueChange={(value) => setFormData(prev => ({ ...prev, purchaseIntent: parseInt(value) }))}
@@ -311,31 +311,31 @@ export const SkoolifeWaitlistFormFR = () => {
               >
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="1" id="intent-1" />
-                  <Label htmlFor="intent-1" className="text-sm font-body cursor-pointer">
+                  <Label htmlFor="intent-1" className="text-xs sm:text-sm font-body cursor-pointer">
                     1 - Juste curieux
                   </Label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="2" id="intent-2" />
-                  <Label htmlFor="intent-2" className="text-sm font-body cursor-pointer">
+                  <Label htmlFor="intent-2" className="text-xs sm:text-sm font-body cursor-pointer">
                     2 - Peu probable
                   </Label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="3" id="intent-3" />
-                  <Label htmlFor="intent-3" className="text-sm font-body cursor-pointer">
+                  <Label htmlFor="intent-3" className="text-xs sm:text-sm font-body cursor-pointer">
                     3 - Neutre
                   </Label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="4" id="intent-4" />
-                  <Label htmlFor="intent-4" className="text-sm font-body cursor-pointer">
+                  <Label htmlFor="intent-4" className="text-xs sm:text-sm font-body cursor-pointer">
                     4 - Probable
                   </Label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="5" id="intent-5" />
-                  <Label htmlFor="intent-5" className="text-sm font-body cursor-pointer">
+                  <Label htmlFor="intent-5" className="text-xs sm:text-sm font-body cursor-pointer">
                     5 - Prêt à payer
                   </Label>
                 </div>
@@ -349,7 +349,7 @@ export const SkoolifeWaitlistFormFR = () => {
                 checked={formData.betaTester}
                 onCheckedChange={(checked) => setFormData(prev => ({ ...prev, betaTester: checked as boolean }))}
               />
-              <Label htmlFor="betaTester" className="text-sm font-body cursor-pointer">
+              <Label htmlFor="betaTester" className="text-xs sm:text-sm font-body cursor-pointer">
                 Je suis intéressé(e) pour être testeur bêta
               </Label>
             </div>
@@ -364,12 +364,12 @@ export const SkoolifeWaitlistFormFR = () => {
                   className={errors.privacyConsent ? 'border-destructive' : ''}
                   required
                 />
-                <Label htmlFor="privacyConsent" className="text-sm font-body cursor-pointer leading-tight">
+                <Label htmlFor="privacyConsent" className="text-xs sm:text-sm font-body cursor-pointer leading-tight">
                   J'accepte la politique de confidentialité et les conditions d'utilisation *
                 </Label>
               </div>
               {errors.privacyConsent && (
-                <p className="text-sm text-destructive font-body">{errors.privacyConsent}</p>
+                <p className="text-xs sm:text-sm text-destructive font-body">{errors.privacyConsent}</p>
               )}
             </div>
 
@@ -380,7 +380,7 @@ export const SkoolifeWaitlistFormFR = () => {
                 checked={formData.marketingOptIn}
                 onCheckedChange={(checked) => setFormData(prev => ({ ...prev, marketingOptIn: checked as boolean }))}
               />
-              <Label htmlFor="marketingOptIn" className="text-sm font-body cursor-pointer">
+              <Label htmlFor="marketingOptIn" className="text-xs sm:text-sm font-body cursor-pointer">
                 Je souhaite recevoir des actualités sur Skoolife (facultatif)
               </Label>
             </div>
@@ -388,28 +388,27 @@ export const SkoolifeWaitlistFormFR = () => {
             <Button 
               type="submit" 
               disabled={isSubmitting}
-              className="w-full bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body disabled:opacity-50"
+              className="w-full bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body disabled:opacity-50 text-sm sm:text-base py-2.5 sm:py-3"
               size="lg"
             >
               {isSubmitting ? "Inscription en cours..." : "Rejoindre la liste d'attente"}
             </Button>
           </form>
-
         </CardContent>
       </Card>
 
       {/* CTA collant mobile */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-t border-border p-4 md:hidden">
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-t border-border p-3 sm:hidden">
         <Button 
           onClick={() => {
             const element = document.getElementById('inscription');
             element?.scrollIntoView({ behavior: 'smooth' });
           }}
-          className="w-full bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body shadow-skoolife-lg"
+          className="w-full bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body shadow-skoolife-lg text-sm py-2.5"
           size="lg"
         >
           Rejoindre la liste d'attente
-          <ArrowRight className="ml-2 h-5 w-5" />
+          <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
       </div>
     </>
