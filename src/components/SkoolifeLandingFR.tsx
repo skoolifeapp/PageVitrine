@@ -392,16 +392,6 @@ export const SkoolifeLandingFR = () => {
       <footer className="bg-card border-t border-border px-4 sm:px-6 lg:px-8 py-8 sm:py-12 shadow-skoolife-lg">
         <div className="container max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0 text-center md:text-left">
-              <img 
-                src="/lovable-uploads/b8c3645b-f96c-42ec-8bd6-f3bd829eba8e.png" 
-                alt="Skoolife" 
-                className="h-6 sm:h-8 w-auto mb-2 mx-auto md:mx-0"
-              />
-              <p className="text-xs sm:text-sm text-muted-foreground font-body">
-                Gérer la vie étudiante, pas seulement les devoirs.
-              </p>
-            </div>
             
             {/* Liens légaux masqués sur mobile pour simplifier */}
             <div className="hidden sm:flex flex-wrap justify-center md:justify-end gap-4 sm:gap-6 text-xs sm:text-sm">
