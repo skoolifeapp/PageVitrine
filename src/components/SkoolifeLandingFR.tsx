@@ -300,7 +300,7 @@ export const SkoolifeLandingFR = () => {
       </div>
 
       {/* Section Formulaire d'inscription */}
-      <section id="inscription" className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-16">
+      <section id="inscription" className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-12">
         <div className="container max-w-4xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-3 sm:mb-4">
@@ -312,14 +312,14 @@ export const SkoolifeLandingFR = () => {
       </section>
 
       {/* Flèche de transition */}
-      <div className="flex justify-center py-4 lg:py-6">
+      <div className="flex justify-center py-2 lg:py-3">
         <div className="animate-bounce">
           <ArrowDown className="h-6 w-6 text-skoolife-yellow" style={{ color: 'hsl(var(--skoolife-yellow))' }} />
         </div>
       </div>
 
       {/* Section FAQ */}
-      <section id="faq" className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 bg-muted/30 relative">
+      <section id="faq" className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12 bg-muted/30 relative">
         {/* FAQ section decorative elements */}
         <div className="absolute bottom-0 left-0 w-20 h-20 md:w-28 md:h-28 bg-skoolife-yellow/8 rounded-full blur-xl"></div>
         <div className="container max-w-4xl mx-auto">
