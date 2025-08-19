@@ -12,71 +12,87 @@ export const SkoolifeHeaderFR = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border shadow-header">
-      <div className="container max-w-4xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
-          {/* Navigation de bureau */}
-          <nav className="hidden md:flex items-center space-x-4 lg:space-x-8">
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
+      <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-center md:justify-between h-14 sm:h-16">
+          
+          {/* Navigation centrale pour mobile, à gauche pour desktop */}
+          <nav className="flex items-center space-x-8 md:space-x-12">
             <button 
               onClick={() => scrollToSection('modules')}
-              className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-body text-sm lg:text-base"
+              className="relative text-foreground/80 hover:text-foreground transition-all duration-300 font-medium text-sm sm:text-base group"
             >
               Modules
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </button>
             <button 
               onClick={() => scrollToSection('faq')}
-              className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-body text-sm lg:text-base"
+              className="relative text-foreground/80 hover:text-foreground transition-all duration-300 font-medium text-sm sm:text-base group"
             >
               FAQ
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </button>
           </nav>
 
-          {/* CTA de bureau */}
+          {/* CTA à droite pour desktop, caché sur mobile */}
           <div className="hidden md:block">
             <Button 
               onClick={() => scrollToSection('inscription')}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body text-sm lg:text-base px-3 lg:px-4 py-2"
+              className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground hover:from-primary/90 hover:to-primary/80 shadow-lg hover:shadow-xl transition-all duration-300 font-medium px-6 py-2.5 rounded-full border-0"
               size="sm"
             >
-              <span className="hidden lg:inline">Rejoindre la liste d'attente</span>
-              <span className="lg:hidden">Liste d'attente</span>
+              Rejoindre la liste d'attente
             </Button>
           </div>
 
-          {/* Bouton menu mobile */}
+          {/* Bouton menu mobile - coin supérieur droit */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-accent focus:outline-none focus:ring-2 focus:ring-ring min-h-[44px] min-w-[44px] flex items-center justify-center"
+            className="md:hidden fixed top-4 right-4 z-60 p-2.5 rounded-full bg-background/90 backdrop-blur-sm border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300"
             aria-label="Basculer le menu"
           >
-            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            <div className="relative w-5 h-5">
+              <span className={`absolute top-0 left-0 w-full h-0.5 bg-foreground transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+              <span className={`absolute top-2 left-0 w-full h-0.5 bg-foreground transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`absolute top-4 left-0 w-full h-0.5 bg-foreground transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            </div>
           </button>
         </div>
 
-        {/* Navigation mobile */}
+        {/* Navigation mobile avec overlay */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border animate-fade-in">
-            <nav className="flex flex-col space-y-3">
-              <button 
-                onClick={() => scrollToSection('modules')}
-                className="text-left text-muted-foreground hover:text-foreground transition-colors duration-200 font-body py-3 min-h-[44px] flex items-center"
-              >
-                Modules
-              </button>
-              <button 
-                onClick={() => scrollToSection('faq')}
-                className="text-left text-muted-foreground hover:text-foreground transition-colors duration-200 font-body py-3 min-h-[44px] flex items-center"
-              >
-                FAQ
-              </button>
-              <Button 
-                onClick={() => scrollToSection('inscription')}
-                className="mt-4 bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body w-full min-h-[44px]"
-              >
-                Rejoindre la liste d'attente
-              </Button>
-            </nav>
-          </div>
+          <>
+            <div 
+              className="md:hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-40 animate-fade-in"
+              onClick={() => setIsMenuOpen(false)}
+            />
+            <div className="md:hidden fixed top-0 right-0 w-80 max-w-[85vw] h-full bg-background border-l border-border shadow-2xl z-50 animate-slide-in-right">
+              <div className="p-6 pt-20">
+                <nav className="flex flex-col space-y-6">
+                  <button 
+                    onClick={() => scrollToSection('modules')}
+                    className="text-left text-foreground/80 hover:text-foreground transition-colors duration-200 font-medium text-lg py-3 border-b border-border/30"
+                  >
+                    Modules
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('faq')}
+                    className="text-left text-foreground/80 hover:text-foreground transition-colors duration-200 font-medium text-lg py-3 border-b border-border/30"
+                  >
+                    FAQ
+                  </button>
+                  <div className="pt-6">
+                    <Button 
+                      onClick={() => scrollToSection('inscription')}
+                      className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground hover:from-primary/90 hover:to-primary/80 shadow-lg hover:shadow-xl transition-all duration-300 font-medium w-full py-3 rounded-full"
+                    >
+                      Rejoindre la liste d'attente
+                    </Button>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </>
         )}
       </div>
     </header>
