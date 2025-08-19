@@ -48,7 +48,7 @@ export const SkoolifeLandingFR = () => {
                 <span className="bg-primary text-primary-foreground px-1 rounded">vie étudiante</span>.
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-3 sm:mb-4 font-body leading-relaxed">
-                Planificateur, tâches, finances et documents. Tout au même endroit.
+                Finances, tâches, planning et documents. Tout au même endroit.
               </p>
               
               {/* Badge prix - Masqué sur très petit mobile */}
