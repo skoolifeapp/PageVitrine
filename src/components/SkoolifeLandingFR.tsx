@@ -21,13 +21,28 @@ export const SkoolifeLandingFR = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center animate-fade-in">
             {/* Contenu texte */}
             <div className="text-center lg:text-left">
+              {/* Kicker */}
+              <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold font-body mb-4">
+                Pré-lancement • Janvier 2026
+              </div>
+              
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading text-foreground mb-6 leading-tight">
                 Skoolife vous aide à gérer votre{" "}
-                <span className="text-primary">vie étudiante</span> — pas seulement vos devoirs.
+                <span className="bg-primary text-primary-foreground px-1 rounded">vie étudiante</span> — pas seulement vos devoirs.
               </h1>
-              <p className="text-xl sm:text-2xl text-muted-foreground mb-8 font-body leading-relaxed">
+              <p className="text-xl sm:text-2xl text-muted-foreground mb-4 font-body leading-relaxed">
                 Planificateur, tâches, finances et documents. Tout au même endroit.
               </p>
+              
+              {/* Badge prix */}
+              <div className="text-lg text-muted-foreground font-body mb-4">
+                À partir de <strong className="text-foreground">3,99 €/mois</strong> ou <strong className="text-foreground">39,99 €/an</strong>
+              </div>
+              
+              {/* Intégrations */}
+              <div className="text-sm text-muted-foreground font-body mb-8">
+                <strong>Intégrations :</strong> Google Calendar • Comptes bancaires
+              </div>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
                 <Button 
@@ -44,7 +59,7 @@ export const SkoolifeLandingFR = () => {
                   size="lg"
                   className="font-body px-8 py-3 text-lg border-border hover:bg-accent shadow-sm hover:shadow-skoolife transition-all duration-200"
                 >
-                  En savoir plus
+                  Voir les modules
                   <ChevronDown className="ml-2 h-5 w-5" />
                 </Button>
               </div>
@@ -86,14 +101,23 @@ export const SkoolifeLandingFR = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader>
-                <Calendar className="h-8 w-8 text-primary mb-2" />
-                <CardTitle className="font-heading text-lg flex items-center justify-between">
+                <div className="flex items-center justify-between mb-2">
+                  <Calendar className="h-8 w-8 text-primary" />
+                  <div className="w-32 h-20 bg-muted rounded-2xl flex items-center justify-center">
+                    <div className="w-24 h-16 bg-primary/20 rounded-xl flex items-center justify-center">
+                      <Calendar className="h-6 w-6 text-primary" />
+                    </div>
+                  </div>
+                </div>
+                <CardTitle className="font-heading text-lg">
                   Planificateur
-                  <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100" />
                 </CardTitle>
+                <CardDescription className="font-body text-sm text-primary font-semibold">
+                  Vois ta semaine en un regard.
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <CardDescription className="font-body text-sm">
+                <CardDescription className="font-body text-sm text-muted-foreground">
                   Agenda clair, synchronisation avec les calendriers existants, rappels utiles qui ne submergent pas.
                 </CardDescription>
               </CardContent>
@@ -101,14 +125,23 @@ export const SkoolifeLandingFR = () => {
 
             <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader>
-                <CheckSquare className="h-8 w-8 text-primary mb-2" />
-                <CardTitle className="font-heading text-lg flex items-center justify-between">
+                <div className="flex items-center justify-between mb-2">
+                  <CheckSquare className="h-8 w-8 text-primary" />
+                  <div className="w-32 h-20 bg-muted rounded-2xl flex items-center justify-center">
+                    <div className="w-24 h-16 bg-primary/20 rounded-xl flex items-center justify-center">
+                      <CheckSquare className="h-6 w-6 text-primary" />
+                    </div>
+                  </div>
+                </div>
+                <CardTitle className="font-heading text-lg">
                   Tâches
-                  <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100" />
                 </CardTitle>
+                <CardDescription className="font-body text-sm text-primary font-semibold">
+                  Priorise sans te noyer.
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <CardDescription className="font-body text-sm">
+                <CardDescription className="font-body text-sm text-muted-foreground">
                   Priorités simples, mode focus pour le travail en profondeur, saisie de tâches sans friction.
                 </CardDescription>
               </CardContent>
@@ -116,14 +149,23 @@ export const SkoolifeLandingFR = () => {
 
             <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader>
-                <CreditCard className="h-8 w-8 text-primary mb-2" />
-                <CardTitle className="font-heading text-lg flex items-center justify-between">
+                <div className="flex items-center justify-between mb-2">
+                  <CreditCard className="h-8 w-8 text-primary" />
+                  <div className="w-32 h-20 bg-muted rounded-2xl flex items-center justify-center">
+                    <div className="w-24 h-16 bg-primary/20 rounded-xl flex items-center justify-center">
+                      <CreditCard className="h-6 w-6 text-primary" />
+                    </div>
+                  </div>
+                </div>
+                <CardTitle className="font-heading text-lg">
                   Finances étudiantes
-                  <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100" />
                 </CardTitle>
+                <CardDescription className="font-body text-sm text-primary font-semibold">
+                  Sache où part ton argent.
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <CardDescription className="font-body text-sm">
+                <CardDescription className="font-body text-sm text-muted-foreground">
                   Suivi des dépenses, configuration rapide de budget, aperçu clair de votre santé financière.
                 </CardDescription>
               </CardContent>
@@ -131,14 +173,23 @@ export const SkoolifeLandingFR = () => {
 
             <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader>
-                <FileText className="h-8 w-8 text-primary mb-2" />
-                <CardTitle className="font-heading text-lg flex items-center justify-between">
+                <div className="flex items-center justify-between mb-2">
+                  <FileText className="h-8 w-8 text-primary" />
+                  <div className="w-32 h-20 bg-muted rounded-2xl flex items-center justify-center">
+                    <div className="w-24 h-16 bg-primary/20 rounded-xl flex items-center justify-center">
+                      <FileText className="h-6 w-6 text-primary" />
+                    </div>
+                  </div>
+                </div>
+                <CardTitle className="font-heading text-lg">
                   Documents
-                  <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100" />
                 </CardTitle>
+                <CardDescription className="font-body text-sm text-primary font-semibold">
+                  Retrouve tout en 3 secondes.
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <CardDescription className="font-body text-sm">
+                <CardDescription className="font-body text-sm text-muted-foreground">
                   Tous les PDF et documents importants au même endroit. Triez, étiquetez et recherchez instantanément.
                 </CardDescription>
               </CardContent>
@@ -166,13 +217,13 @@ export const SkoolifeLandingFR = () => {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-6 mb-8">
             <div className="flex items-start space-x-3">
               <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold font-heading text-foreground mb-1">Tâches et événements éparpillés</h3>
+                <h3 className="font-semibold font-heading text-foreground mb-1">Apps éparpillées</h3>
                 <p className="text-muted-foreground font-body text-sm">
-                  Plus besoin de jongler entre les applications de calendrier, les notes autocollantes et les rappels aléatoires.
+                  Plus besoin de jongler entre calendrier, notes et rappels.
                 </p>
               </div>
             </div>
@@ -180,9 +231,9 @@ export const SkoolifeLandingFR = () => {
             <div className="flex items-start space-x-3">
               <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold font-heading text-foreground mb-1">Échéances et rendez-vous manqués</h3>
+                <h3 className="font-semibold font-heading text-foreground mb-1">Échéances manquées</h3>
                 <p className="text-muted-foreground font-body text-sm">
-                  Des rappels intelligents et des priorités claires vous aident à rester au courant de tout.
+                  Rappels intelligents et priorités claires.
                 </p>
               </div>
             </div>
@@ -190,9 +241,9 @@ export const SkoolifeLandingFR = () => {
             <div className="flex items-start space-x-3">
               <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold font-heading text-foreground mb-1">Finances personnelles floues</h3>
+                <h3 className="font-semibold font-heading text-foreground mb-1">Finances floues</h3>
                 <p className="text-muted-foreground font-body text-sm">
-                  Outils de suivi et de budgétisation simples conçus spécifiquement pour les étudiants.
+                  Outils de budget simples pour étudiants.
                 </p>
               </div>
             </div>
@@ -200,12 +251,26 @@ export const SkoolifeLandingFR = () => {
             <div className="flex items-start space-x-3">
               <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold font-heading text-foreground mb-1">Documents difficiles à retrouver</h3>
+                <h3 className="font-semibold font-heading text-foreground mb-1">Documents perdus</h3>
                 <p className="text-muted-foreground font-body text-sm">
-                  Tous vos fichiers importants organisés, étiquetés et consultables en quelques secondes.
+                  Tous vos fichiers organisés et consultables.
                 </p>
               </div>
             </div>
+          </div>
+          
+          <div className="text-center">
+            <p className="text-lg text-muted-foreground font-body mb-6">
+              Marre de jongler ? Rejoins l'early access.
+            </p>
+            <Button 
+              onClick={() => scrollToSection('inscription')}
+              size="lg"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring font-body px-8 py-3 text-lg shadow-skoolife hover:shadow-skoolife-lg transition-all duration-200"
+            >
+              Rejoindre la liste d'attente
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
           </div>
         </div>
       </section>
