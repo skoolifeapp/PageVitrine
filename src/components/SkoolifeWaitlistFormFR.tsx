@@ -190,7 +190,7 @@ export const SkoolifeWaitlistFormFR = () => {
         <CardHeader className="pb-4 sm:pb-6">
           <CardTitle className="text-xl sm:text-2xl font-heading text-center">Rejoindre la liste d'attente Skoolife</CardTitle>
           <CardDescription className="text-center font-body text-sm sm:text-base">
-            Soyez le premier informé du lancement et obtenez un accès anticipé aux fonctionnalités bêta.
+            Soyez informés du lancement et obtenez un accès anticipé aux fonctionnalités bêta.
           </CardDescription>
         </CardHeader>
         <CardContent>
