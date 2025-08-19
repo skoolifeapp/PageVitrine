@@ -126,25 +126,57 @@
   }
 }
 
-/* Highlight marker effect */
+/* Highlight marker effect - hand-drawn style */
 .marker-highlight {
   position: relative;
   display: inline-block;
-  padding: 2px 4px;
-  border-radius: 8px;
-  border: 3px solid hsl(var(--skoolife-yellow));
-  background: transparent;
+  padding: 4px 8px;
   color: inherit;
 }
 
 .marker-highlight::before {
   content: '';
   position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border: 2px solid hsl(var(--skoolife-yellow));
-  border-radius: 10px;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border: 3px solid hsl(var(--skoolife-yellow));
+  border-radius: 50% 40% 60% 30%;
+  transform: rotate(-2deg);
   z-index: -1;
+  animation: hand-drawn-wiggle 3s ease-in-out infinite;
+}
+
+.marker-highlight::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border: 2px solid hsl(var(--skoolife-yellow));
+  border-radius: 40% 60% 30% 50%;
+  transform: rotate(1deg);
+  z-index: -2;
+  opacity: 0.6;
+}
+
+@keyframes hand-drawn-wiggle {
+  0%, 100% {
+    transform: rotate(-2deg) scale(1);
+    border-radius: 50% 40% 60% 30%;
+  }
+  25% {
+    transform: rotate(-1.5deg) scale(1.01);
+    border-radius: 45% 55% 40% 35%;
+  }
+  50% {
+    transform: rotate(-2.5deg) scale(0.99);
+    border-radius: 55% 35% 65% 25%;
+  }
+  75% {
+    transform: rotate(-1deg) scale(1.01);
+    border-radius: 40% 50% 45% 40%;
+  }
 }
