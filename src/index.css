@@ -149,6 +149,15 @@
   pointer-events: none;
 }
 
+/* Ajustement pour les écrans laptop/desktop */
+@media (min-width: 1024px) {
+  .marker-highlight::before {
+    width: calc(100% + 12px);
+    height: calc(100% + 12px);
+    border-width: 2px;
+  }
+}
+
 
 .marker-highlight span {
   position: relative;
