@@ -107,10 +107,10 @@ export const SkoolifeLandingFR = () => {
         </div>
       </section>
 
-      {/* Flèche de transition - Masquée sur mobile */}
-      <div className="hidden sm:flex justify-center py-4 lg:py-8">
+      {/* Flèche de transition */}
+      <div className="flex justify-center py-6 lg:py-8">
         <div className="animate-bounce">
-          <ArrowDown className="h-5 w-5 lg:h-6 lg:w-6 text-primary" />
+          <ArrowDown className="h-6 w-6 text-skoolife-yellow" style={{ color: 'hsl(var(--skoolife-yellow))' }} />
         </div>
       </div>
 
@@ -207,9 +207,9 @@ export const SkoolifeLandingFR = () => {
       </section>
 
       {/* Flèche de transition */}
-      <div className="flex justify-center py-8">
+      <div className="flex justify-center py-6 lg:py-8">
         <div className="animate-bounce">
-          <ArrowDown className="h-6 w-6 text-primary" />
+          <ArrowDown className="h-6 w-6 text-skoolife-yellow" style={{ color: 'hsl(var(--skoolife-yellow))' }} />
         </div>
       </div>
 
@@ -286,9 +286,9 @@ export const SkoolifeLandingFR = () => {
       </section>
 
       {/* Flèche de transition */}
-      <div className="flex justify-center py-8">
+      <div className="flex justify-center py-6 lg:py-8">
         <div className="animate-bounce">
-          <ArrowDown className="h-6 w-6 text-primary" />
+          <ArrowDown className="h-6 w-6 text-skoolife-yellow" style={{ color: 'hsl(var(--skoolife-yellow))' }} />
         </div>
       </div>
 
@@ -303,6 +303,13 @@ export const SkoolifeLandingFR = () => {
           <SkoolifeWaitlistFormFR />
         </div>
       </section>
+
+      {/* Flèche de transition */}
+      <div className="flex justify-center py-6 lg:py-8">
+        <div className="animate-bounce">
+          <ArrowDown className="h-6 w-6 text-skoolife-yellow" style={{ color: 'hsl(var(--skoolife-yellow))' }} />
+        </div>
+      </div>
 
       {/* Section FAQ */}
       <section id="faq" className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-muted/30 relative">
