@@ -318,7 +318,7 @@ export const SkoolifeLandingFR = () => {
         <div className="container max-w-4xl mx-auto">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-3 sm:mb-4">
-              Questions fréquemment posées
+              Questions fréquemment <span className="marker-highlight">posées</span>
             </h2>
             <p className="text-sm sm:text-base lg:text-lg text-muted-foreground font-body">
               Tout ce que vous devez savoir sur Skoolife.
