@@ -129,13 +129,8 @@ export const SkoolifeLandingFR = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader className="pb-3 sm:pb-4">
-                <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center mb-2">
                   <Calendar className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
-                  <div className="w-24 h-16 sm:w-32 sm:h-20 bg-muted rounded-xl sm:rounded-2xl flex items-center justify-center">
-                    <div className="w-20 h-12 sm:w-24 sm:h-16 bg-primary/20 rounded-lg sm:rounded-xl flex items-center justify-center">
-                      <Calendar className="h-4 w-4 sm:h-6 sm:w-6 text-primary" />
-                    </div>
-                  </div>
                 </div>
                 <CardTitle className="font-heading text-base sm:text-lg">
                   Planificateur
@@ -153,13 +148,8 @@ export const SkoolifeLandingFR = () => {
 
             <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader className="pb-3 sm:pb-4">
-                <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center mb-2">
                   <CheckSquare className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
-                  <div className="w-24 h-16 sm:w-32 sm:h-20 bg-muted rounded-xl sm:rounded-2xl flex items-center justify-center">
-                    <div className="w-20 h-12 sm:w-24 sm:h-16 bg-primary/20 rounded-lg sm:rounded-xl flex items-center justify-center">
-                      <CheckSquare className="h-4 w-4 sm:h-6 sm:w-6 text-primary" />
-                    </div>
-                  </div>
                 </div>
                 <CardTitle className="font-heading text-base sm:text-lg">
                   Tâches
@@ -177,13 +167,8 @@ export const SkoolifeLandingFR = () => {
 
             <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader className="pb-3 sm:pb-4">
-                <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center mb-2">
                   <CreditCard className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
-                  <div className="w-24 h-16 sm:w-32 sm:h-20 bg-muted rounded-xl sm:rounded-2xl flex items-center justify-center">
-                    <div className="w-20 h-12 sm:w-24 sm:h-16 bg-primary/20 rounded-lg sm:rounded-xl flex items-center justify-center">
-                      <CreditCard className="h-4 w-4 sm:h-6 sm:w-6 text-primary" />
-                    </div>
-                  </div>
                 </div>
                 <CardTitle className="font-heading text-base sm:text-lg">
                   Finances étudiantes
@@ -201,13 +186,8 @@ export const SkoolifeLandingFR = () => {
 
             <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader className="pb-3 sm:pb-4">
-                <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center mb-2">
                   <FileText className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
-                  <div className="w-24 h-16 sm:w-32 sm:h-20 bg-muted rounded-xl sm:rounded-2xl flex items-center justify-center">
-                    <div className="w-20 h-12 sm:w-24 sm:h-16 bg-primary/20 rounded-lg sm:rounded-xl flex items-center justify-center">
-                      <FileText className="h-4 w-4 sm:h-6 sm:w-6 text-primary" />
-                    </div>
-                  </div>
                 </div>
                 <CardTitle className="font-heading text-base sm:text-lg">
                   Documents
