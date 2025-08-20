@@ -344,10 +344,10 @@ export const SkoolifeLandingFR = () => {
 
             <AccordionItem value="item-2" className="bg-card rounded-lg px-4 sm:px-6 shadow-sm hover:shadow-skoolife transition-shadow duration-200">
               <AccordionTrigger className="font-heading text-left text-sm sm:text-base">
-                Quelles plateformes Skoolife supportera-t-il ?
+                Sur quels supports Skoolife sera-t-il disponible ?
               </AccordionTrigger>
               <AccordionContent className="font-body text-muted-foreground text-sm">
-                Skoolife est conçu mobile-first pour iOS et Android.
+                Skoolife est conçu pour les appareils mobiles, compatible iOS et Android
               </AccordionContent>
             </AccordionItem>
 
