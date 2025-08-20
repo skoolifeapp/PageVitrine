@@ -182,3 +182,13 @@
     border-radius: 40% 50% 45% 40%;
   }
 }
+/* Masquer le badge "Edit with Lovable" injecté au runtime */
+#lovable-badge,
+.lovable-badge,
+[data-lovable-badge],
+a[href*="lovable.dev"],
+a[href*="lovable.app"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
