@@ -426,7 +426,7 @@ export const SkoolifeLandingFR = () => {
           
           <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-border text-center">
             <p className="text-xs text-muted-foreground font-body">
-              © 2024 Skoolife. Tous droits réservés. Pré-lancement — bientôt disponible.
+              © 2025 Skoolife. Tous droits réservés.
             </p>
           </div>
         </div>
