@@ -6,6 +6,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { validateEmail, validateName, validateText, sanitizeInput, checkRateLimit, recordSubmission, secureStorageSet, secureStorageGet, detectBot } from "@/lib/security";
 
 interface WaitlistData {
   email: string;
@@ -69,16 +71,40 @@ export const SkoolifeWaitlistForm = () => {
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
     
-    if (!formData.email) {
-      newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email address";
+    // Validate email
+    const emailValidation = validateEmail(formData.email);
+    if (!emailValidation.isValid) {
+      newErrors.email = emailValidation.error!;
     }
     
-    if (!formData.privacyConsent) {
-      newErrors.privacyConsent = "Privacy consent is required";
+    // Validate first name if provided
+    if (formData.firstName) {
+      const nameValidation = validateName(formData.firstName);
+      if (!nameValidation.isValid) {
+        newErrors.firstName = nameValidation.error!;
+      }
     }
-
+    
+    // Validate other text fields
+    if (formData.country) {
+      const countryValidation = validateText(formData.country, 'Country');
+      if (!countryValidation.isValid) {
+        newErrors.country = countryValidation.error!;
+      }
+    }
+    
+    if (formData.school) {
+      const schoolValidation = validateText(formData.school, 'School');
+      if (!schoolValidation.isValid) {
+        newErrors.school = schoolValidation.error!;
+      }
+    }
+    
+    // Privacy consent is required
+    if (!formData.privacyConsent) {
+      newErrors.privacyConsent = 'Privacy consent is required';
+    }
+    
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -86,38 +112,72 @@ export const SkoolifeWaitlistForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Bot detection
+    if (detectBot()) {
+      setErrors({ general: 'Submission not allowed' });
+      return;
+    }
+    
+    // Rate limiting
+    if (!checkRateLimit()) {
+      setErrors({ general: 'Too many submissions. Please try again later.' });
+      return;
+    }
+    
     if (!validateForm()) {
       return;
     }
 
-    const submissionData = {
-      ...formData,
-      timestamp: Date.now(),
-    };
-
-    // Store in localStorage
-    const existing = localStorage.getItem('skoolife_waitlist');
-    const waitlist = existing ? JSON.parse(existing) : [];
-    waitlist.push(submissionData);
-    localStorage.setItem('skoolife_waitlist', JSON.stringify(waitlist));
-
-    // Optional: POST to backend if endpoint exists
-    const signupEndpoint = (window as any).NEXT_PUBLIC_SIGNUP_ENDPOINT;
-    if (signupEndpoint) {
+    try {
+      // Sanitize inputs before submission
+      const sanitizedData = {
+        email: sanitizeInput(formData.email),
+        first_name: formData.firstName ? sanitizeInput(formData.firstName) : null,
+        country: formData.country ? sanitizeInput(formData.country) : null,
+        school: formData.school ? sanitizeInput(formData.school) : null,
+        study_year: formData.studyYear ? sanitizeInput(formData.studyYear) : null,
+        purchase_intent: formData.purchaseIntent ? parseInt(formData.purchaseIntent) : null,
+        beta_optin: formData.betaTester,
+        marketing_optin: formData.marketingOptIn,
+        privacy_accepted: formData.privacyConsent,
+        utm_source: formData.utmSource || null,
+        utm_medium: formData.utmMedium || null,
+        utm_campaign: formData.utmCampaign || null,
+        utm_term: formData.utmTerm || null,
+        utm_content: formData.utmContent || null,
+        referrer: formData.referrer || null,
+        device_type: formData.deviceType || null,
+        locale: formData.locale || null,
+      };
+      
+      const { error } = await supabase
+        .from('waitlist')
+        .insert([sanitizedData]);
+      
+      if (error) {
+        throw error;
+      }
+      
+      recordSubmission();
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      
+      // Fallback: save to secure localStorage
       try {
-        await fetch(signupEndpoint, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(submissionData),
+        const existingData = secureStorageGet('skoolife-waitlist') || [];
+        existingData.push({
+          ...formData,
+          submittedAt: new Date().toISOString()
         });
-      } catch (error) {
-        console.log('Backend submission failed, but data saved locally:', error);
+        secureStorageSet('skoolife-waitlist', existingData, 24);
+        recordSubmission();
+        setIsSubmitted(true);
+      } catch (storageError) {
+        console.error('Error saving to localStorage:', storageError);
+        setErrors({ general: 'There was an error submitting your information. Please try again.' });
       }
     }
-
-    setIsSubmitted(true);
   };
 
   const handleNeedsChange = (need: string, checked: boolean) => {

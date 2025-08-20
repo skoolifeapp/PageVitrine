@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { CheckCircle, ArrowDown, ArrowRight, ChevronDown } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { validateEmail, validateName, validateText, sanitizeInput, checkRateLimit, recordSubmission, secureStorageSet, secureStorageGet, detectBot } from "@/lib/security";
 
 interface WaitlistData {
   email: string;
@@ -65,14 +66,38 @@ export const SkoolifeWaitlistFormFR = () => {
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
     
-    if (!formData.email) {
-      newErrors.email = "L'email est requis";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Veuillez entrer une adresse email valide";
+    // Validate email
+    const emailValidation = validateEmail(formData.email);
+    if (!emailValidation.isValid) {
+      newErrors.email = 'Veuillez entrer une adresse email valide';
     }
     
+    // Validate first name if provided
+    if (formData.firstName) {
+      const nameValidation = validateName(formData.firstName);
+      if (!nameValidation.isValid) {
+        newErrors.firstName = 'Le prénom contient des caractères non valides ou est trop long';
+      }
+    }
+    
+    // Validate other text fields
+    if (formData.country) {
+      const countryValidation = validateText(formData.country, 'Pays');
+      if (!countryValidation.isValid) {
+        newErrors.country = 'Le pays contient des caractères non valides ou est trop long';
+      }
+    }
+    
+    if (formData.school) {
+      const schoolValidation = validateText(formData.school, 'École');
+      if (!schoolValidation.isValid) {
+        newErrors.school = 'L\'école contient des caractères non valides ou est trop long';
+      }
+    }
+    
+    // Privacy consent is required
     if (!formData.privacyConsent) {
-      newErrors.privacyConsent = "Le consentement à la politique de confidentialité est requis";
+      newErrors.privacyConsent = 'Le consentement à la politique de confidentialité est requis';
     }
 
     setErrors(newErrors);
@@ -82,6 +107,18 @@ export const SkoolifeWaitlistFormFR = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Bot detection
+    if (detectBot()) {
+      setErrors({ general: 'Soumission non autorisée' });
+      return;
+    }
+    
+    // Rate limiting
+    if (!checkRateLimit()) {
+      setErrors({ general: 'Trop de soumissions. Veuillez réessayer plus tard.' });
+      return;
+    }
+    
     if (!validateForm()) {
       return;
     }
@@ -90,14 +127,13 @@ export const SkoolifeWaitlistFormFR = () => {
     setErrors({});
 
     try {
-      // Préparer les données pour Supabase
+      // Sanitize inputs before submission
       const payload = {
-        email: formData.email,
-        first_name: formData.firstName || null,
-        country: formData.country || null,
-        school: formData.school || null,
-        study_year: formData.studyYear || null,
-        
+        email: sanitizeInput(formData.email),
+        first_name: formData.firstName ? sanitizeInput(formData.firstName) : null,
+        country: formData.country ? sanitizeInput(formData.country) : null,
+        school: formData.school ? sanitizeInput(formData.school) : null,
+        study_year: formData.studyYear ? sanitizeInput(formData.studyYear) : null,
         purchase_intent: formData.purchaseIntent > 0 ? formData.purchaseIntent : null,
         beta_optin: formData.betaTester,
         marketing_optin: formData.marketingOptIn,
@@ -127,13 +163,14 @@ export const SkoolifeWaitlistFormFR = () => {
         return;
       }
 
+      recordSubmission();
+      
       // Fallback localStorage en cas d'échec partiel
       const submissionData = { ...formData, timestamp: Date.now() };
       try {
-        const existing = localStorage.getItem('skoolife_waitlist');
-        const waitlist = existing ? JSON.parse(existing) : [];
-        waitlist.push(submissionData);
-        localStorage.setItem('skoolife_waitlist', JSON.stringify(waitlist));
+        const existingData = secureStorageGet('skoolife-waitlist-fr') || [];
+        existingData.push(submissionData);
+        secureStorageSet('skoolife-waitlist-fr', existingData, 24);
       } catch (storageError) {
         console.log('Échec du stockage localStorage:', storageError);
       }
