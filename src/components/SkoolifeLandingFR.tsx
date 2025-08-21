@@ -334,7 +334,7 @@ export const SkoolifeLandingFR = () => {
                 Quand Skoolife sera-t-il disponible ?
               </AccordionTrigger>
               <AccordionContent className="font-body text-muted-foreground text-sm">
-                La version bêta novembre 2025, le vrai lancement sera début 2026.
+                Lancement de la version bêta prévu en novembre 2025, suivi du déploiement complet début 2026.
               </AccordionContent>
             </AccordionItem>
 
