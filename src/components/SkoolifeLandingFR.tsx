@@ -58,10 +58,6 @@ export const SkoolifeLandingFR = () => {
                 Finances, tâches, planning et documents. Tout au même endroit.
               </p>
               
-              {/* Badge prix - Masqué sur très petit mobile */}
-              <div className="hidden xs:block text-sm sm:text-base lg:text-lg text-muted-foreground font-body mb-3 sm:mb-4">
-                À partir de <strong className="text-foreground">3,99 €/mois</strong> ou <strong className="text-foreground">39,99 €/an</strong>
-              </div>
               
               {/* Intégrations - Masqué sur mobile */}
               <div className="hidden sm:block text-xs sm:text-sm text-muted-foreground font-body mb-6 sm:mb-8">
@@ -356,7 +352,7 @@ export const SkoolifeLandingFR = () => {
                 Combien coûtera Skoolife ?
               </AccordionTrigger>
               <AccordionContent className="font-body text-muted-foreground text-sm">
-                3,99 € par mois ou 39,99 € par an.
+                À partir de 3,99 € par mois ou 39,99 € par an.
               </AccordionContent>
             </AccordionItem>
 
