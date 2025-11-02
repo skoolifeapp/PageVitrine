@@ -47,12 +47,12 @@ export const SkoolifeLandingFR = () => {
             <div className="text-center lg:text-left order-1 lg:order-1">
               {/* Kicker */}
               <div className="inline-block bg-primary/10 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold font-body mb-3 sm:mb-4">
-                En développement • Lancement 2025
+                En développement
               </div>
               
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-heading text-foreground mb-4 sm:mb-6 leading-tight">
-                Transforme ton emploi du temps en{" "}
-                <span className="bg-primary text-primary-foreground px-1 rounded">planning de révisions intelligent</span>
+                Ton planning de révisions,{" "}
+                <span className="bg-skoolife-yellow text-foreground px-2 rounded">optimisé</span>
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-3 sm:mb-4 font-body leading-relaxed">
                 Import ton .ics, ajoute tes contraintes, et l'IA crée ton planning. Ajusté chaque semaine à ton rythme.
@@ -79,25 +79,54 @@ export const SkoolifeLandingFR = () => {
                   size="lg"
                   className="w-full sm:w-auto font-body px-6 sm:px-8 py-3 text-base sm:text-lg border-border hover:bg-accent shadow-sm hover:shadow-skoolife transition-all duration-200"
                 >
-                  Voir les modules
+                  Découvrez
                   <ChevronDown className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Button>
               </div>
             </div>
 
-            {/* Image des mockups */}
+            {/* Illustration visuelle */}
             <div className="flex justify-center lg:justify-end order-2 lg:order-2">
               <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-xl">
                 {/* Glow effect background */}
                 <div className="absolute inset-0 bg-gradient-to-r from-skoolife-yellow/20 to-primary/30 rounded-3xl blur-2xl scale-110 animate-pulse"></div>
                 
-                {/* Floating animation container */}
-                <div className="relative animate-float">
-                  <img 
-                    src="/lovable-uploads/025c2b45-0d0e-4553-9ef5-a78112ebad64.png" 
-                    alt="Interface Skoolife - Tableau de bord et section finances sur mobile"
-                    className="w-full h-auto hover:scale-105 transition-all duration-700 ease-out hover:rotate-1 drop-shadow-2xl hover:drop-shadow-[0_25px_50px_rgba(0,0,0,0.25)]"
-                  />
+                {/* Floating animation container with calendar/schedule visualization */}
+                <div className="relative animate-float bg-card/80 backdrop-blur rounded-2xl p-6 sm:p-8 shadow-2xl">
+                  <div className="space-y-4">
+                    {/* Week header */}
+                    <div className="flex justify-between items-center mb-6">
+                      <h3 className="font-heading text-lg font-bold text-foreground">Planning de révisions</h3>
+                      <div className="text-xs text-muted-foreground bg-skoolife-yellow/20 px-3 py-1 rounded-full">IA</div>
+                    </div>
+                    
+                    {/* Schedule blocks */}
+                    <div className="space-y-3">
+                      <div className="bg-skoolife-yellow/30 p-3 rounded-lg flex items-center gap-3">
+                        <div className="w-2 h-12 bg-skoolife-yellow rounded-full"></div>
+                        <div className="flex-1">
+                          <p className="font-semibold text-sm">Mathématiques</p>
+                          <p className="text-xs text-muted-foreground">14:00 - 15:30</p>
+                        </div>
+                      </div>
+                      
+                      <div className="bg-primary/20 p-3 rounded-lg flex items-center gap-3">
+                        <div className="w-2 h-12 bg-primary rounded-full"></div>
+                        <div className="flex-1">
+                          <p className="font-semibold text-sm">Physique</p>
+                          <p className="text-xs text-muted-foreground">16:00 - 17:00</p>
+                        </div>
+                      </div>
+                      
+                      <div className="bg-skoolife-yellow/20 p-3 rounded-lg flex items-center gap-3">
+                        <div className="w-2 h-12 bg-skoolife-yellow/70 rounded-full"></div>
+                        <div className="flex-1">
+                          <p className="font-semibold text-sm">Anglais</p>
+                          <p className="text-xs text-muted-foreground">18:00 - 19:00</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   
                   {/* Floating accent dots */}
                   <div className="absolute -top-4 -right-2 w-3 h-3 bg-skoolife-yellow rounded-full animate-bounce-slow opacity-80"></div>
@@ -125,7 +154,7 @@ export const SkoolifeLandingFR = () => {
               Comment ça <span className="marker-highlight">fonctionne</span>
             </h2>
             <p className="text-sm sm:text-base lg:text-lg text-muted-foreground font-body max-w-2xl mx-auto">
-              Trois étapes simples pour un planning de révisions sur mesure, propulsé par l'IA.
+              Trois étapes simples pour un planning de révisions sur mesure, piloté par l'IA.
             </p>
           </div>
 
@@ -272,101 +301,10 @@ export const SkoolifeLandingFR = () => {
         <div className="container max-w-4xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-3 sm:mb-4">
-              Prêt à vous <span className="marker-highlight">organiser</span> ?
+              Rejoignez l'aventure <span className="marker-highlight">Skoolife</span>
             </h2>
           </div>
           <SkoolifeWaitlistFormFR />
-        </div>
-      </section>
-
-      {/* Flèche de transition */}
-      <div className="flex justify-center py-6 lg:py-8">
-        <div className="animate-bounce">
-          <ArrowDown className="h-6 w-6 text-skoolife-yellow" style={{ color: 'hsl(var(--skoolife-yellow))' }} />
-        </div>
-      </div>
-
-      {/* Section FAQ */}
-      <section id="faq" className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-muted/30 relative">
-        {/* FAQ section decorative elements */}
-        <div className="absolute bottom-0 left-0 w-20 h-20 md:w-28 md:h-28 bg-skoolife-yellow/8 rounded-full blur-xl"></div>
-        <div className="container max-w-4xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-3 sm:mb-4">
-              Questions fréquemment <span className="marker-highlight">posées</span>
-            </h2>
-            <p className="text-sm sm:text-base lg:text-lg text-muted-foreground font-body">
-              Tout ce que vous devez savoir sur Skoolife.
-            </p>
-          </div>
-
-          <Accordion type="single" collapsible className="space-y-3 sm:space-y-4">
-            <AccordionItem value="item-1" className="bg-card rounded-lg px-4 sm:px-6 shadow-sm hover:shadow-skoolife transition-shadow duration-200">
-              <AccordionTrigger className="font-heading text-left text-sm sm:text-base">
-                Quand Skoolife sera-t-il disponible ?
-              </AccordionTrigger>
-              <AccordionContent className="font-body text-muted-foreground text-sm">
-                Lancement de la version bêta prévu en novembre 2025, suivi du déploiement complet début 2026.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-2" className="bg-card rounded-lg px-4 sm:px-6 shadow-sm hover:shadow-skoolife transition-shadow duration-200">
-              <AccordionTrigger className="font-heading text-left text-sm sm:text-base">
-                Sur quels supports Skoolife sera-t-il disponible ?
-              </AccordionTrigger>
-              <AccordionContent className="font-body text-muted-foreground text-sm">
-                Skoolife est conçu pour les appareils mobiles, compatible iOS et Android.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-3" className="bg-card rounded-lg px-4 sm:px-6 shadow-sm hover:shadow-skoolife transition-shadow duration-200">
-              <AccordionTrigger className="font-heading text-left text-sm sm:text-base">
-                Combien coûtera Skoolife ?
-              </AccordionTrigger>
-              <AccordionContent className="font-body text-muted-foreground text-sm">
-                À partir de 3,99 € par mois ou 39,99 € par an.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-4" className="bg-card rounded-lg px-4 sm:px-6 shadow-sm hover:shadow-skoolife transition-shadow duration-200">
-              <AccordionTrigger className="font-heading text-left text-sm sm:text-base">
-                Puis-je synchroniser avec mon calendrier et mes outils existants ?
-              </AccordionTrigger>
-              <AccordionContent className="font-body text-muted-foreground text-sm">
-                Oui — Google Calendar et compte bancaire.
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* FAQ supplémentaires masquées sur mobile pour alléger */}
-            <div className="hidden sm:block space-y-3 sm:space-y-4">
-              <AccordionItem value="item-5" className="bg-card rounded-lg px-4 sm:px-6 shadow-sm hover:shadow-skoolife transition-shadow duration-200">
-                <AccordionTrigger className="font-heading text-left text-sm sm:text-base">
-                  Mes données sont-elles sécurisées et privées ?
-                </AccordionTrigger>
-                <AccordionContent className="font-body text-muted-foreground text-sm">
-                  Absolument. Nous utilisons un chiffrement standard de l'industrie et ne vendons jamais vos données personnelles. Vos informations académiques et financières restent privées et sécurisées. Vous pouvez exporter ou supprimer vos données à tout moment.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-6" className="bg-card rounded-lg px-4 sm:px-6 shadow-sm hover:shadow-skoolife transition-shadow duration-200">
-                <AccordionTrigger className="font-heading text-left text-sm sm:text-base">
-                  Qu'est-ce qui rend Skoolife différent des autres applications étudiantes ?
-                </AccordionTrigger>
-                <AccordionContent className="font-body text-muted-foreground text-sm">
-                  Skoolife se concentre sur l'expérience complète de la vie étudiante, pas seulement les aspects académiques. Nous combinons planification, tâches, finances et gestion de documents dans une seule application belle et facile à utiliser, conçue spécifiquement pour les étudiants post-secondaires.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-7" className="bg-card rounded-lg px-4 sm:px-6 shadow-sm hover:shadow-skoolife transition-shadow duration-200">
-                <AccordionTrigger className="font-heading text-left text-sm sm:text-base">
-                  Puis-je être testeur bêta ?
-                </AccordionTrigger>
-                <AccordionContent className="font-body text-muted-foreground text-sm">
-                  Oui ! Lorsque vous rejoignez la liste d'attente, vous pouvez choisir d'être testeur bêta. Nous contacterons les testeurs bêta sélectionnés pour un accès anticipé et des sessions de retours avant le lancement public.
-                </AccordionContent>
-              </AccordionItem>
-            </div>
-          </Accordion>
         </div>
       </section>
 
