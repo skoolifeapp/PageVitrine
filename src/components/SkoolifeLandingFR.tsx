@@ -47,21 +47,21 @@ export const SkoolifeLandingFR = () => {
             <div className="text-center lg:text-left order-1 lg:order-1">
               {/* Kicker */}
               <div className="inline-block bg-primary/10 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold font-body mb-3 sm:mb-4">
-                Pré-lancement • Novembre 2025
+                En développement • Lancement 2025
               </div>
               
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-heading text-foreground mb-4 sm:mb-6 leading-tight">
-                Skoolife vous aide à simplifier votre{" "}
-                <span className="bg-primary text-primary-foreground px-1 rounded">vie étudiante</span>.
+                Transforme ton emploi du temps en{" "}
+                <span className="bg-primary text-primary-foreground px-1 rounded">planning de révisions intelligent</span>
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-3 sm:mb-4 font-body leading-relaxed">
-                Finances, tâches, planning et documents. Tout au même endroit.
+                Import ton .ics, ajoute tes contraintes, et l'IA crée ton planning. Ajusté chaque semaine à ton rythme.
               </p>
               
               
               {/* Intégrations - Masqué sur mobile */}
               <div className="hidden sm:block text-xs sm:text-sm text-muted-foreground font-body mb-6 sm:mb-8">
-                <strong>Intégrations :</strong> Google Calendar • Comptes bancaires
+                <strong>Compatible avec :</strong> Google Calendar • Apple Calendar • Emplois du temps .ics
               </div>
               
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start items-center">
@@ -117,34 +117,31 @@ export const SkoolifeLandingFR = () => {
         </div>
       </div>
 
-      {/* Les 4 modules */}
+      {/* Comment ça fonctionne */}
       <section id="modules" className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <div className="container max-w-6xl mx-auto">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-3 sm:mb-4">
-              Quatre modules <span className="marker-highlight">essentiels</span>
+              Comment ça <span className="marker-highlight">fonctionne</span>
             </h2>
             <p className="text-sm sm:text-base lg:text-lg text-muted-foreground font-body max-w-2xl mx-auto">
-              Tout ce dont un étudiant a besoin pour gérer sa vie quotidienne, intégré de manière transparente.
+              Trois étapes simples pour un planning de révisions sur mesure, propulsé par l'IA.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
               <CardHeader className="pb-3 sm:pb-4">
                 <div className="flex items-center mb-2">
-                  <CreditCard className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+                  <Calendar className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 </div>
                 <CardTitle className="font-heading text-base sm:text-lg">
-                  Finances
+                  1. Import ton emploi du temps
                 </CardTitle>
-                <CardDescription className="font-body text-xs sm:text-sm text-primary font-semibold">
-                  Sache où part ton argent.
-                </CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
                 <CardDescription className="font-body text-xs sm:text-sm text-muted-foreground">
-                  Suivi des dépenses, configuration rapide de budget, aperçu clair de votre santé financière.
+                  Import ton fichier .ics depuis Google Calendar, Apple Calendar ou ton école. Skoolife comprend automatiquement ton emploi du temps.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -155,34 +152,12 @@ export const SkoolifeLandingFR = () => {
                   <CheckSquare className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 </div>
                 <CardTitle className="font-heading text-base sm:text-lg">
-                  Tâches
+                  2. Ajoute tes contraintes
                 </CardTitle>
-                <CardDescription className="font-body text-xs sm:text-sm text-primary font-semibold">
-                  Priorise sans te noyer.
-                </CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
                 <CardDescription className="font-body text-xs sm:text-sm text-muted-foreground">
-                  Priorités simples, mode focus pour le travail en profondeur, saisie de tâches sans friction.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-sm hover:shadow-skoolife-lg transition-all duration-300 group">
-              <CardHeader className="pb-3 sm:pb-4">
-                <div className="flex items-center mb-2">
-                  <Calendar className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
-                </div>
-                <CardTitle className="font-heading text-base sm:text-lg">
-                  Planning
-                </CardTitle>
-                <CardDescription className="font-body text-xs sm:text-sm text-primary font-semibold">
-                  Vois ta semaine en un regard.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <CardDescription className="font-body text-xs sm:text-sm text-muted-foreground">
-                  Agenda clair, synchronisation avec les calendriers existants, rappels utiles qui ne submergent pas.
+                  Indique tes examens, ton rythme préféré, tes disponibilités. L'IA crée un planning adapté à ta vie réelle.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -193,15 +168,12 @@ export const SkoolifeLandingFR = () => {
                   <FileText className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 </div>
                 <CardTitle className="font-heading text-base sm:text-lg">
-                  Documents
+                  3. L'IA s'ajuste à toi
                 </CardTitle>
-                <CardDescription className="font-body text-xs sm:text-sm text-primary font-semibold">
-                  Retrouve tout en 3 secondes.
-                </CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
                 <CardDescription className="font-body text-xs sm:text-sm text-muted-foreground">
-                  Tous les PDF et documents importants au même endroit. Triez, étiquetez et recherchez instantanément.
+                  Chaque semaine, le planning évolue selon ton rythme et tes progrès. Fini la surcharge, place à l'efficacité.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -223,10 +195,10 @@ export const SkoolifeLandingFR = () => {
         <div className="container max-w-4xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-heading text-foreground mb-3 sm:mb-4">
-              Problèmes que <span className="marker-highlight">nous résolvons</span>
+              Pourquoi <span className="marker-highlight">Skoolife</span> ?
             </h2>
             <p className="text-sm sm:text-base lg:text-lg text-muted-foreground font-body">
-              Cela vous dit quelque chose ? Vous n'êtes pas seul.
+              On sait que réviser, c'est stressant. Skoolife réduit la charge mentale.
             </p>
           </div>
 
@@ -234,9 +206,9 @@ export const SkoolifeLandingFR = () => {
             <div className="flex items-start space-x-3">
               <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-0.5 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold font-heading text-foreground mb-1 text-sm sm:text-base">Apps éparpillées</h3>
+                <h3 className="font-semibold font-heading text-foreground mb-1 text-sm sm:text-base">Fini la procrastination</h3>
                 <p className="text-muted-foreground font-body text-xs sm:text-sm">
-                  Plus besoin de jongler entre calendrier, notes et rappels.
+                  Un planning clair qui te dit quoi réviser et quand. Plus besoin de te poser la question.
                 </p>
               </div>
             </div>
@@ -244,9 +216,9 @@ export const SkoolifeLandingFR = () => {
             <div className="flex items-start space-x-3">
               <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-0.5 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold font-heading text-foreground mb-1 text-sm sm:text-base">Échéances manquées</h3>
+                <h3 className="font-semibold font-heading text-foreground mb-1 text-sm sm:text-base">Adapté à ton rythme</h3>
                 <p className="text-muted-foreground font-body text-xs sm:text-sm">
-                  Rappels intelligents et priorités claires.
+                  L'IA ajuste ton planning chaque semaine selon ta progression. Ni trop, ni trop peu.
                 </p>
               </div>
             </div>
@@ -254,9 +226,9 @@ export const SkoolifeLandingFR = () => {
             <div className="flex items-start space-x-3">
               <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-0.5 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold font-heading text-foreground mb-1 text-sm sm:text-base">Finances floues</h3>
+                <h3 className="font-semibold font-heading text-foreground mb-1 text-sm sm:text-base">Gagne du temps</h3>
                 <p className="text-muted-foreground font-body text-xs sm:text-sm">
-                  Outils de budget simples pour étudiants.
+                  Plus besoin de passer des heures à planifier. Skoolife le fait pour toi.
                 </p>
               </div>
             </div>
@@ -264,9 +236,9 @@ export const SkoolifeLandingFR = () => {
             <div className="flex items-start space-x-3">
               <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-0.5 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold font-heading text-foreground mb-1 text-sm sm:text-base">Documents perdus</h3>
+                <h3 className="font-semibold font-heading text-foreground mb-1 text-sm sm:text-base">Réduis ta charge mentale</h3>
                 <p className="text-muted-foreground font-body text-xs sm:text-sm">
-                  Tous vos fichiers organisés et consultables.
+                  Laisse l'IA gérer l'organisation. Concentre-toi sur l'essentiel : tes révisions.
                 </p>
               </div>
             </div>
