@@ -10,79 +10,11 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "13.0.4"
+    PostgrestVersion: "13.0.5"
   }
   public: {
     Tables: {
-      waitlist: {
-        Row: {
-          beta_optin: boolean | null
-          country: string | null
-          created_at: string
-          device_type: string | null
-          email: string
-          first_name: string | null
-          id: string
-          locale: string | null
-          marketing_optin: boolean | null
-          privacy_accepted: boolean
-          purchase_intent: number | null
-          referrer: string | null
-          school: string | null
-          study_year: string | null
-          updated_at: string
-          utm_campaign: string | null
-          utm_content: string | null
-          utm_medium: string | null
-          utm_source: string | null
-          utm_term: string | null
-        }
-        Insert: {
-          beta_optin?: boolean | null
-          country?: string | null
-          created_at?: string
-          device_type?: string | null
-          email: string
-          first_name?: string | null
-          id?: string
-          locale?: string | null
-          marketing_optin?: boolean | null
-          privacy_accepted?: boolean
-          purchase_intent?: number | null
-          referrer?: string | null
-          school?: string | null
-          study_year?: string | null
-          updated_at?: string
-          utm_campaign?: string | null
-          utm_content?: string | null
-          utm_medium?: string | null
-          utm_source?: string | null
-          utm_term?: string | null
-        }
-        Update: {
-          beta_optin?: boolean | null
-          country?: string | null
-          created_at?: string
-          device_type?: string | null
-          email?: string
-          first_name?: string | null
-          id?: string
-          locale?: string | null
-          marketing_optin?: boolean | null
-          privacy_accepted?: boolean
-          purchase_intent?: number | null
-          referrer?: string | null
-          school?: string | null
-          study_year?: string | null
-          updated_at?: string
-          utm_campaign?: string | null
-          utm_content?: string | null
-          utm_medium?: string | null
-          utm_source?: string | null
-          utm_term?: string | null
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Views: {
       [_ in never]: never
